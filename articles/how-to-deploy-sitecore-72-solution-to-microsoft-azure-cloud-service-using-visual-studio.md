@@ -177,6 +177,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 16. In the **Settings** blade, click on the **Access keys** section and copy the **Primary** field value.
 
 17. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
+    
     ```
     Install-Package Microsoft.Web.RedisSessionStateProvider
     ```
@@ -214,7 +215,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 20. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
 
     ```xml
-    Install-Package Install-Package Sitecore.Azure.Diagnostics
+    Install-Package Sitecore.Azure.Diagnostics
     ```
 
 21. In the **Visual Studio**, in the **Solution Explorer**, right-click on `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
@@ -249,9 +250,9 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
 
 6. In the file system, go to the project location.
 
-7. Copy the `Sitecore.sln` file to the `\\<SitecoreSolutionRoot>` directory, where the `\Data`, `\Databases` and `\Website` ones are located.
+7. Copy the `Sitecore.sln` file to the `\<SitecoreSolutionRoot>` directory, where the `\Data`, `\Databases` and `\Website` ones are located.
 
-8. Modify the `Sitecore.sln` file to change the path to `Sitecore.csproj` file to the `\\Website` directory.
+8. Modify the `Sitecore.sln` file to change the path to `Sitecore.csproj` file to the `\Website` directory.
    ```xml
    Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore", "Website\Sitecore.csproj", "{4B02E1CD-9DEE-47D2-B7C7-DBDC6AE2A329}"
    ```
@@ -268,7 +269,7 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
    - \Web.Debug.config
    - \Web.Release.config
   
-   For an ASP.NET MVC application:
+   For an **ASP.NET MVC** application:
    - \App_Data
    - \App_Start
    - \Controllers
@@ -286,7 +287,6 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
    **Important:** Modify both the `packages.config` and `\Views\Web.config` files to use the same version of ASP.NET MVC that Sitecore CMS supports. For example, for Sitecore CMS 7.2 that supports ASP.NET MVC 5.1, the version must be 5.1.0:
    
    ```xml
-   <?xml version="1.0" encoding="utf-8"?>
    <packages>
      <package id="Microsoft.AspNet.Mvc" version="5.1.0" targetFramework="net45" />
      <package id="Microsoft.AspNet.Razor" version="3.1.0" targetFramework="net45" />
@@ -296,7 +296,6 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
    ```
    
    ```xml
-   <?xml version="1.0">
    <configuration>
    ...
      <system.web.webPages.razor>
@@ -312,7 +311,7 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
 11. In the **Solution Explorer**, add a reference to the `Sitecore.Kernel.dll` assembly and set the **Copy Local** property to **False**.
 
 12. In the **Solution Explorer**, right-click the `Global.asax` item, and then click **View Code** in the context menu to modify the **Global** class as shown below:
-    ```
+    ```c#
     using System;
     ...
     
@@ -329,10 +328,9 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
     ```
     
 13. In the **Solution Explorer**, double-click the `\App_Start\RouteConfig.cs` item, and then comment out the default ASP.NET MVC route:
-    ```
+    ```c#
     using System;
-    ...
-      
+    ...      
     namespace Sitecore
     {
       public class RouteConfig
@@ -357,12 +355,12 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
 The recommended approach to deploy Sitecore databases to the Microsoft Azure SQL Database service is as follows:
 
 1. Update the Sitecore database schema to fit the **Azure SQL Database** service requirements:
-   - For Sitecore CMS 7.2 - execute the **[SQL Azure \[Core, Master, Web\].sql](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/SQL Azure [Core, Master, Web].sql)** script on the Sitecore Core, Master and Web databases.
-   - For Sitecore DMS 7.2 - execute the **[SQL Azure \[Analytics\].sql](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/SQL Azure [Analytics].sql)** script on the Sitecore Analytics databases.
+   - For Sitecore CMS 7.2 - execute the [SQL Azure \[Core, Master, Web\].sql](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/SQL Azure [Core, Master, Web].sql) script on the Sitecore Core, Master and Web databases.
+   - For Sitecore DMS 7.2 - execute the [SQL Azure \[Analytics\].sql](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/SQL Azure [Analytics].sql) script on the Sitecore Analytics databases.
 
 2. In the **SQL Server Management Studio**, in the **Object Explorer**, right-click a Sitecore database, and select **Tasks -> Export Data-tier Application...** in the context menu. The **Export data-tier Application** dialog box appears. 
 
-3. In the **Export data-tier Application** dialog box, click the Next > button to go to the **Export Settings** step. 
+3. In the **Export data-tier Application** dialog box, click the **Next >** button to go to the **Export Settings** step. 
 
 4. In the **Export Settings** step, browse a location for a `*.bacpac` file to be stored in the file system. Then click the **Next >** button to go to the **Summary** step. 
 
@@ -390,7 +388,7 @@ The recommended approach to deploy Sitecore databases to the Microsoft Azure SQL
 
 16. In the **SQL Database** blade, click on the **Server** section. Then create a new server configuration. 
 
-  **Note:** Sitecore recommends using Azure SQL Database V12 service to get the better experience.
+  **Note:** Sitecore recommends using [Azure SQL Database V12](http://azure.microsoft.com/en-us/documentation/articles/sql-database-v12-whats-new/) service to get the better experience.
 
 17. In the **SQL Database** blade, fill in the **Name** field and configure the other section if needed, then click the **Create** button.
 
