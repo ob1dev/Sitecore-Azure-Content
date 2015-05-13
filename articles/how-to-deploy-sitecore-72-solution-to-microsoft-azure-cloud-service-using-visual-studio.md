@@ -90,7 +90,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 7. Modify the `ServiceDefinition.csdef` file under the `WebRole` element. Add the following task definition to execute the Startup.cmd file:
 
    ```xml
-   </ServiceDefinition>
+   <ServiceDefinition>
      <WebRole>
      ...
        <Startup>
@@ -182,7 +182,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
     Install-Package Microsoft.Web.RedisSessionStateProvider
     ```
     
-18. Modify the `Web.config` file under the `\configuration\system.web\sessionState mode="Custom"` element. Move the entire `<sessionState mode="Custom" ... />` element from the `Web.config` file to both the `Web.Debug.config` and `Web.Release.config` files:   
+18. Modify the `Web.config` file under the `\configuration\system.web\sessionState mode="Custom"` element. Move the entire `sessionState mode="Custom"` element from the `Web.config` file to both the `Web.Debug.config` and `Web.Release.config` files:   
 
     ```xml
     <configuration>
@@ -195,7 +195,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
     </configuration>
     ```
 
-19. Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\system.web\sessionState\providers\add` element. Insert the copied Azure Redis Cache Host Name into the `host` attribute and Primary Access Key into the `accessKey` one. Additionally, insert the `xdt:Transorm` attribute into the `<sessionState>` element:   
+19. Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\system.web\sessionState\providers\add` element. Insert the copied Azure Redis Cache Host Name into the `host` attribute and Primary Access Key into the `accessKey` one. Additionally, insert the `xdt:Transorm` attribute into the `sessionState` element:   
 
     ```xml
     <configuration>
@@ -253,9 +253,10 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
 7. Copy the `Sitecore.sln` file to the `\<SitecoreSolutionRoot>` directory, where the `\Data`, `\Databases` and `\Website` ones are located.
 
 8. Modify the `Sitecore.sln` file to change the path to `Sitecore.csproj` file to the `\Website` directory.
-   ```xml
-   Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore", "Website\Sitecore.csproj", "{4B02E1CD-9DEE-47D2-B7C7-DBDC6AE2A329}"
-   ```
+   
+    ```xml
+    Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore", "Website\Sitecore.csproj", "{4B02E1CD-9DEE-47D2-B7C7-DBDC6AE2A329}"
+    ```
 9. Copy the following directories and files to the `\Website` directory.
 
    For an **ASP.NET Web Forms** application:
@@ -311,6 +312,7 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
 11. In the **Solution Explorer**, add a reference to the `Sitecore.Kernel.dll` assembly and set the **Copy Local** property to **False**.
 
 12. In the **Solution Explorer**, right-click the `Global.asax` item, and then click **View Code** in the context menu to modify the **Global** class as shown below:
+    
     ```c#
     using System;
     ...
@@ -328,6 +330,7 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
     ```
     
 13. In the **Solution Explorer**, double-click the `\App_Start\RouteConfig.cs` item, and then comment out the default ASP.NET MVC route:
+    
     ```c#
     using System;
     ...      
