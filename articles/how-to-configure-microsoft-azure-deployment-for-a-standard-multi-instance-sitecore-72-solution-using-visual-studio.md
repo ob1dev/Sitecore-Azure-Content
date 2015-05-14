@@ -21,6 +21,7 @@ This article provides a list of techniques that can be used to configure Microso
 #Solution
 
 The recommended approach to configuring multi-instance CM and CD deployments using Visual Studio is as follows:
+
 1. In the **Visual Studio**, configure the Sitecore solution as described in the [How to deploy Sitecore 7.2 solution to Microsoft Azure Cloud Service using Visual Studio](how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio.md) article.
 
    **Note:** Use the following names:
@@ -35,7 +36,7 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-02.png)
 
-3. In the **Visual Studio**, in the **Solution Explorer**, right-click the solution. Then click **Add -> Existing project...** in the context menu. Add the duplicated `Sitecore.CD` projects to the same Visual Studio solution.
+3. In the **Visual Studio**, in the **Solution Explorer**, right-click the solution. Then click the **Add -> Existing project...** in the context menu. Add the duplicated `Sitecore.CD` projects to the same Visual Studio solution.
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-03.png)
 
@@ -53,7 +54,7 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
    - \sitecore\default.aspx
    - \sitecore\no.css
 
-5. In the **Visual Studio**, in the **Solution Explorer**, under the **Azure Cloud Service** project, right-click the `Roles` item. Then click **Add -> Web Role Project in solution...** in the context menu. The **Associate with Role Project** dialog box appears.
+5. In the **Visual Studio**, in the **Solution Explorer**, under the **Azure Cloud Service** project, right-click the `Roles` item. Then click the **Add** -> **Web Role Project in solution...** in the context menu. The **Associate with Role Project** dialog box appears.
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-04.png)
 
@@ -65,6 +66,6 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
 
    **Note:** Each project must include only corresponding configuration files. For example, include the `\App_Config\Include\SwitchMasterToWeb.config` file in the `Sitecore.CM` projects, but do not include it in the `Sitecore.CM` one.
 
-8. Right-click the `Sitecore.Azure`` project, and then click the **Publish...** in the context menu to deploy both the Sitecore Content Management and Content Delivery WebRoles.
+8. Right-click the `Sitecore.Azure` project, and then click the **Publish...** in the context menu to deploy both the Sitecore Content Management and Content Delivery WebRoles.
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-06.png)
