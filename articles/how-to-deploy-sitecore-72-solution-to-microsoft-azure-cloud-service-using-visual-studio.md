@@ -259,6 +259,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 24. In the **Publishing Azure Application** dialog box, publish the Sitecore solution to the Microsoft Azure Cloud Platform.
 
    ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-06.png)
+   
    **Note:** For the basic information about the Publish Azure Application Wizard, see the MSDN website: http://msdn.microsoft.com/en-us/library/azure/hh535756.aspx
 
 ##How to Create ASP.NET Web Application Project
@@ -268,20 +269,34 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
 
 1. In the **Visual Studio**, on the ribbon, click File, and then select **New -> Project...** in the context menu. The **New Project** dialog box appears.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-01.png)
+
 2. In the **New Project** dialog box, in the left panel, select the `/Installed/Templates/Visual C#/Web` item, and then select the **ASP.NET Web Application** template.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-02.png)
+
 3. Fill in the **Name**, **Location** and **Solution** name fields and click the **OK** button. The **New ASP.NET Project** dialog box appears.
+
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-03.png)
 
 4. In the **New ASP.NET Project** dialog box, select the **Empty** template and select one of the following options, and then click the **OK** button:
    - **Web Forms** to build an ASP.NET Web Forms application
    - **MVC** to build an ASP.NET MVC application
    - Both **Web Forms** and **MVC** to build a hybrid ASP.NET application
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-04.png)
+
 5. Close the **Visual Studio** when the project is generated.
+
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-05.png)
 
 6. In the file system, go to the project location.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-06.png)
+
 7. Copy the `Sitecore.sln` file to the `\<SitecoreSolutionRoot>` directory, where the `\Data`, `\Databases` and `\Website` ones are located.
+
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-07.png)
 
 8. Modify the `Sitecore.sln` file to change the path to `Sitecore.csproj` file to the `\Website` directory.
    
@@ -301,6 +316,8 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
    - \Web.Debug.config
    - \Web.Release.config
   
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-08.png)
+  
    For an **ASP.NET MVC** application:
    - \App_Data
    - \App_Start
@@ -316,6 +333,8 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
    - \Web.Debug.config
    - \Web.Release.config
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-09.png)
+   
    **Important:** Modify both the `packages.config` and `\Views\Web.config` files to use the same version of ASP.NET MVC that Sitecore CMS supports. For example, for Sitecore CMS 7.2 that supports ASP.NET MVC 5.1, the version must be 5.1.0:
    
    ```xml
@@ -340,7 +359,11 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
 
 10. In the **Visual Studio**, open the `\<SitecoreSolutionRoot>\Sitecore.sln` solution.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-10.png)
+
 11. In the **Solution Explorer**, add a reference to the `Sitecore.Kernel.dll` assembly and set the **Copy Local** property to **False**.
+
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-11.png)
 
 12. In the **Solution Explorer**, right-click the `Global.asax` item, and then click **View Code** in the context menu to modify the **Global** class as shown below:
     
