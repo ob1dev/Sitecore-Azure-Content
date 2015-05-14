@@ -34,6 +34,8 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
 1. In the **Visual Studio**, right-click the **ASP.NET Web Application** project, and then click **Convert -> Convert to Microsoft Cloud Service Project** in the context menu. The **Azure Cloud Service** project is generated.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-01.png)
+   
    **Note:** For information on creating an ASP.NET Web Application project for Sitecore, see the section "How To Create ASP.NET Web Application Project" of this article.
    
 2. Modify both the **Web.Debug.config** and **Web.Release.config** files to replace the `connectionStrings` element. Add the following Web.config transformation to use connect strings that target the **Azure SQL Database** service:
@@ -72,6 +74,8 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    
 4. Copy the contents of the `\Data` directory to the `\Website\App_Data` directory.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/File-System-01.png)
+   
 5. Clean the following directories to avoid overloading the **Cloud Service** package:
    - \App_Data\MediaCache
    - \App_Data\debug
@@ -83,9 +87,13 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    - \temp
    - \upload
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/File-System-02.png)
+   
    **Note:** The Cloud Service package is limited in size and cannot be more than 1.5 GB. Therefore, the directories listed above must be cleaned to reduce the package size.
    
 6. Place the [Startup.cmd](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/Startup.cmd) file in the `\bin` directory.
+
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/File-System-03.png)
 
 7. Modify the `ServiceDefinition.csdef` file under the `WebRole` element. Add the following task definition to execute the Startup.cmd file:
 
@@ -135,6 +143,8 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    - \sitecore\default.aspx
    - \sitecore\no.css
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-02.png)
+
    **Important:** Visual Studio may freeze when including the entire `\sitecore\shell` directory at once because it contains a lot of files and subdirectories. Try to split all the subdirectories into portions, and then add them one by one.
 
 9. For the **Content Management** environment, modify both the `Web.Debug.config` and `Web.Release.config` files to patch the `Caching.CacheViewState`, `PageStateStore` and `ViewStateStore` Sitecore settings:
@@ -164,71 +174,92 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
 10. Log in to the **Microsoft Azure Portal** using the https://portal.azure.com URL.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-Redis-01.png)
+
 11. In the **Jumpbar**, click the **New** button, then select the **Data + Storage** section and click the **Redis Cache** button. The **New Redis Cache** blade appears.
+
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-Redis-02.png)
 
 12. In the **New Redis Cache** blade, fill in the **DNS name** field and configure the other section if needed, then click the **Create** button.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-Redis-03.png)
+
 13. In the **Startboard**, click on the **my-website** Redis Cache tile.
+
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-Redis-04.png)
 
 14. In the **my-website Redis Cache** blade, click the **All settings** button. The **Settings** blade appears.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-Redis-05.png)
+   
 15. In the **Settings** blade, click on the **Properties** section and copy the **Host Name** field value.
+
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-Redis-06.png)
 
 16. In the **Settings** blade, click on the **Access keys** section and copy the **Primary** field value.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-Redis-07.png)
+
 17. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
     
-    ```
-    Install-Package Microsoft.Web.RedisSessionStateProvider
-    ```
+   ```
+   Install-Package Microsoft.Web.RedisSessionStateProvider
+   ```
     
 18. Modify the `Web.config` file under the `\configuration\system.web\sessionState mode="Custom"` element. Move the entire `sessionState mode="Custom"` element from the `Web.config` file to both the `Web.Debug.config` and `Web.Release.config` files:   
 
-    ```xml
-    <configuration>
-    ...
-      <system.web>
-        <sessionState mode="Custom" customProvider="MySessionStateStore">
-        ...
-        </sessionState>
-      </system.web>
-    </configuration>
-    ```
+   ```xml
+   <configuration>
+   ...
+     <system.web>
+       <sessionState mode="Custom" customProvider="MySessionStateStore">
+       ...
+       </sessionState>
+     </system.web>
+   </configuration>
+   ```
 
 19. Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\system.web\sessionState\providers\add` element. Insert the copied Azure Redis Cache Host Name into the `host` attribute and Primary Access Key into the `accessKey` one. Additionally, insert the `xdt:Transorm` attribute into the `sessionState` element:   
 
-    ```xml
-    <configuration>
-    ...
-      <system.web>
-        <sessionState mode="Custom" customProvider="MySessionStateStore" xdt:Transform="Replace>
-          <providers>
-            <add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" host="{host-name}.redis.cache.windows.net" accessKey="{primary-access-key}" ssl="true" />
-          </providers>
-        </sessionState>
-      </system.web>
-    </configuration>
-    ```
+   ```xml
+   <configuration>
+   ...
+     <system.web>
+       <sessionState mode="Custom" customProvider="MySessionStateStore" xdt:Transform="Replace>
+         <providers>
+           <add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" host="{host-name}.redis.cache.windows.net" accessKey="{primary-access-key}" ssl="true" />
+         </providers>
+       </sessionState>
+     </system.web>
+   </configuration>
+   ```
 
-    **Note:** For information on configuring ASP.NET Session State Provider for Azure Redis Cache, see the MSDN website: https://msdn.microsoft.com/en-us/library/azure/dn690522.aspx
+   **Note:** For information on configuring ASP.NET Session State Provider for Azure Redis Cache, see the MSDN website: https://msdn.microsoft.com/en-us/library/azure/dn690522.aspx
 
 20. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
 
-    ```xml
-    Install-Package Sitecore.Azure.Diagnostics
-    ```
+   ```xml
+   Install-Package Sitecore.Azure.Diagnostics
+   ```
 
 21. In the **Visual Studio**, in the **Solution Explorer**, right-click on `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-03.png)
+
 22. Right-click on the **Azure Cloud Service** project and click the **Set as StartUp Project** in the context menu. Use Azure Computer Emulator to run and debug Sitecore instance locally.
 
-    **Note:** For information regarding using Emulator Express to Run and Debug a Cloud Service Locally, see the MSDN website: https://msdn.microsoft.com/library/azure/dn339018.aspx
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-04.png)
+
+   **Note:** For information regarding using Emulator Express to Run and Debug a Cloud Service Locally, see the MSDN website: https://msdn.microsoft.com/library/azure/dn339018.aspx
 
 23. Right-click the **Azure Cloud Service** project and click the **Publish...**  in the context menu. The **Publishing Azure Application** dialog box appears.
 
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-05.png)
+
 24. In the **Publishing Azure Application** dialog box, publish the Sitecore solution to the Microsoft Azure Cloud Platform.
 
-    **Note:** For the basic information about the Publish Azure Application Wizard, see the MSDN website: http://msdn.microsoft.com/en-us/library/azure/hh535756.aspx
+   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-06.png)
+   **Note:** For the basic information about the Publish Azure Application Wizard, see the MSDN website: http://msdn.microsoft.com/en-us/library/azure/hh535756.aspx
 
 ##How to Create ASP.NET Web Application Project
 
@@ -254,9 +285,9 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
 
 8. Modify the `Sitecore.sln` file to change the path to `Sitecore.csproj` file to the `\Website` directory.
    
-    ```xml
-    Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore", "Website\Sitecore.csproj", "{4B02E1CD-9DEE-47D2-B7C7-DBDC6AE2A329}"
-    ```
+   ```xml
+   Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore", "Website\Sitecore.csproj", "{4B02E1CD-9DEE-47D2-B7C7-DBDC6AE2A329}"
+   ```
 9. Copy the following directories and files to the `\Website` directory.
 
    For an **ASP.NET Web Forms** application:
