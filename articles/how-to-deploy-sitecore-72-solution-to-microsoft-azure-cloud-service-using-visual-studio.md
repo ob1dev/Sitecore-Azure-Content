@@ -1,13 +1,5 @@
 #How to deploy Sitecore 7.2 solution to Microsoft Azure Cloud Service using Visual Studio
 
-Applies to: Sitecore CMS 7.2
-
-Publication date:  December 08, 2014 
-
-Keywords: Azure, CMS, DMS
-
-##Summary
-
 After developing a Sitecore solution in Visual Studio, it is possible to manually publish this solution to the Microsoft Azure Cloud Platform.
 
 This article provides a list of techniques that can be used to deploy a Sitecore solution to Microsoft Azure using Microsoft Visual Studio.
@@ -516,7 +508,7 @@ Empty ASP.NET Web Application Projects:
 - [Sitecore 7.2 ASP.NET Web Forms.zip](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore 7.2 ASP.NET Web Forms.zip)
 - [Sitecore 7.2 ASP.NET Web Forms and MVC.zip](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore 7.2 ASP.NET Web Forms and MVC.zip)
 
-Exported Sitecore databases as *.bacpac files:
+Exported Sitecore databases as `*.bacpac` files:
 - [Sitecore72.Core.bacpac](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore72.Core.bacpac)
 - [Sitecore72.Master.bacpac](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore72.Master.bacpac)
 - [Sitecore72.Web.bacpac](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore72.Web.bacpac)
