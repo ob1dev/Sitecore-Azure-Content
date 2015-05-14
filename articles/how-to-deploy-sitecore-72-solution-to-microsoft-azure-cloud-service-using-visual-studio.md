@@ -7,7 +7,6 @@ This article provides a list of techniques that can be used to deploy a Sitecore
 **Important:** It is highly recommended that you get acquainted with the [Compute Hosting Options Provided by Azure](http://azure.microsoft.com/en-us/documentation/articles/fundamentals-application-models/) and [Microsoft Azure Fundamentals](http://www.microsoftvirtualacademy.com/colleges/Azure-fundamentals) before following the instructions in this article.
 
 **Requirements:**
-- A Microsoft Account and a Microsoft Azure subscription with the following Azure services enabled:
   - [Azure Cloud Service](https://msdn.microsoft.com/en-us/library/azure/jj155995.aspx)
   - [Azure Storage](https://msdn.microsoft.com/en-us/library/azure/gg433040.aspx)
   - [Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx)
