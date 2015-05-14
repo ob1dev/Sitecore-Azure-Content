@@ -1,3 +1,5 @@
+#How to configure Microsoft Azure deployment for a standard multi-instance Sitecore 7.2 solution using Visual Studio
+
 Sitecore supports distributed solutions that include multiple Sitecore instances in both the Content Management (CM) and Content Delivery (CD) environments.
 
 This article provides a list of techniques that can be used to configure Microsoft Azure deployment for a standard multi-instance Sitecore 7.2 solution using Microsoft Visual Studio.
@@ -18,7 +20,7 @@ This article provides a list of techniques that can be used to configure Microso
 
 **Note:** To download the latest version of the Microsoft Azure SDK and Tool for Visual Studio, follow this link: http://azure.microsoft.com/en-us/downloads/
 
-#Solution
+##Solution
 
 The recommended approach to configuring multi-instance CM and CD deployments using Visual Studio is as follows:
 
@@ -36,7 +38,7 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-02.png)
 
-3. In the **Visual Studio**, in the **Solution Explorer**, right-click the solution. Then click the **Add -> Existing project...** in the context menu. Add the duplicated `Sitecore.CD` projects to the same Visual Studio solution.
+3. In the **Visual Studio**, in the **Solution Explorer**, right-click the solution. Then click the **Add** -> **Existing project...** in the context menu. Add the duplicated `Sitecore.CD` projects to the same Visual Studio solution.
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-03.png)
 
