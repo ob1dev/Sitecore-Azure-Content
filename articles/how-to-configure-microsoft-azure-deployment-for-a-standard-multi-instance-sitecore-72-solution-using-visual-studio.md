@@ -27,22 +27,22 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
 1. In the **Visual Studio**, configure the Sitecore solution as described in the [How to deploy Sitecore 7.2 solution to Microsoft Azure Cloud Service using Visual Studio](how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio.md) article.
 
    **Note:** Use the following names:
-   - For the **ASP.NET Web Application** project – `Sitecore.CM`
+   - For the **ASP.NET Web Application** project – `Sitecore.CD`
    - For the **Azure Cloud Service** project – `Sitecore.Azure`
   
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-01.png)
 
-2. In the file system, duplicate both the `Sitecore.CM.csproj` and `Sitecore.CM.csproj.user` files using the `Sitecore.CD.csproj` and `Sitecore.CD.csproj` names.
+2. In the file system, duplicate both the `Sitecore.CD.csproj` and `Sitecore.CD.csproj.user` files using the `Sitecore.CM.csproj` and `Sitecore.CM.csproj` names.
 
    **Important:** Both the `Sitecore.CM` and `Sitecore.CD` ASP.NET Web Application projects must be located in the same `\Website` directory to share the same Sitecore directories and files.
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-02.png)
 
-3. In the **Visual Studio**, in the **Solution Explorer**, right-click the solution. Then click the **Add** -> **Existing project...** in the context menu. Add the duplicated `Sitecore.CD` projects to the same Visual Studio solution.
+3. In the **Visual Studio**, in the **Solution Explorer**, right-click the solution. Then click the **Add** -> **Existing project...** in the context menu. Add the duplicated `Sitecore.CM` projects to the same Visual Studio solution.
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-03.png)
 
-4. In the **Visual Studio**, in the **Solution Explorer**, exclude the following Sitecore Content Management related directories from the `Sitecore.CD` project:
+4. In the **Visual Studio**, in the **Solution Explorer**, include the following Sitecore Content Management related directories in the `Sitecore.CM` project:
    
    - \sitecore\admin
    - \sitecore\Copyright
@@ -60,7 +60,7 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-04.png)
 
-6. In the **Associate with Role Project** dialog box, select the `Sitecore.CD` project and add it as the second Web Role to the **Azure Cloud Service** project.
+6. In the **Associate with Role Project** dialog box, select the `Sitecore.CM` project and add it as the second Web Role to the **Azure Cloud Service** project.
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-05.png)
 
