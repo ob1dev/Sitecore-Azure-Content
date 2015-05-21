@@ -88,6 +88,10 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
     ```
     Install-Package Sitecore.Azure.Setup -Version 7.5.0
     ```
+   
+   **Note:** Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\connectionStrings` element.
+   - For SQL Server connection strings, replace the `{server-name}` with the name of your Azure SQL Database service. The `{server-admin-login}` and `{password}` with SQL Server account credentials. 
+   - For MongoDB connection strings, replace the `{host}` with the URL of your Mongo service. The `{user-name}` and `{password}` with your Mongo account credentials.
     
 5. In the **ASP.NET Web Application** project, include the `Startup.cmd` file in the the `\bin` folder.
 
