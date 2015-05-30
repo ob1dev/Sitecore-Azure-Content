@@ -13,7 +13,7 @@ This article provides a list of techniques that can be used to configure Microso
   - [Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx)
   - [Azure Redis Cache](https://msdn.microsoft.com/en-us/library/azure/dn690523.aspx)
 - Microsoft Visual Studio 2013
-- Microsoft Azure SDK 2.5.1 for .NET
+- Microsoft Azure SDK 2.5.1 for .NET or higher
 - Microsoft Azure Tool for Visual Studio 2013 
 - Microsoft SQL Server Management Studio 2014
 - Sitecore CMS and DMS 7.2 rev. 150408 (7.2 Update-4) or higher
@@ -64,9 +64,16 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-05.png)
 
-7. Configure the `Sitecore.CM` and `Sitecore.CD` projects according to the [Sitecore Scaling Guide](http://sdn.sitecore.net/Reference/Sitecore%207/Scaling%20Guide.aspx) document. 
+7. Configure the `Sitecore.CD` and `Sitecore.CM` projects according to the [Sitecore Scaling Guide](http://sdn.sitecore.net/Reference/Sitecore%207/Scaling%20Guide.aspx) document. Each project must include the following configuration files in the `\App_Config\Include` folder. 
+   
+   For the `Sitecore.CD` project:
+   
+   - ScalabilitySettings.config
+   - SwitchMasterToWeb.config
+   
+   For the `Sitecore.CM` project:
 
-   **Note:** Each project must include only corresponding configuration files. For example, include the `\App_Config\Include\SwitchMasterToWeb.config` file in the `Sitecore.CM` projects, but do not include it in the `Sitecore.CM` one.
+   - ScalabilitySettings.config
 
 8. Right-click the `Sitecore.Azure` project, and then click the **Publish...** in the context menu to deploy both the Sitecore Content Management and Content Delivery WebRoles.
 
