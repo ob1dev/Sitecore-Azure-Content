@@ -2,7 +2,7 @@
 
 The Sitecore Azure module automatically creates all Microsoft Azure services it uses during deployment, as well as generates names for them. The pattern for generating names depends on the project name and environment type from the Sitecore Azure Environment file, as well as the deployment location, deployment type, etc.
 
-One of the services used during deployment is the Microsoft Azure Cloud Service. Microsoft Azure requires that the name of the Microsoft Azure Cloud Service be unique, since it is used as a part of the public URL prefix for the *.cloudapp.net host name.
+One of the services used during deployment is the [Microsoft Azure Cloud Service](https://msdn.microsoft.com/en-us/library/azure/jj155995.aspx). Microsoft Azure requires that the name of the Microsoft Azure Cloud Service be unique, since it is used as a part of the public URL prefix for the `*.cloudapp.net` host name.
 
 This article provides a list of techniques that can be used to manually create the Microsoft Azure Cloud Service and deploy a Sitecore solution using this Cloud Service when using the Sitecore Azure module.
 
