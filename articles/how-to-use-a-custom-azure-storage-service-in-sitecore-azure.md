@@ -8,7 +8,7 @@ This article provides a list of techniques that can be used to manually create t
 
 ## Solution
 
-The recommended approach to use custom Azure Storage Service in Sitecore Azure is as follows.
+The recommended approach to use custom Azure Storage Service in Sitecore Azure is as follows:
 
 1. Log in to the **Microsoft Azure Management Portal** using the https://manage.windowsazure.com URL.
 
