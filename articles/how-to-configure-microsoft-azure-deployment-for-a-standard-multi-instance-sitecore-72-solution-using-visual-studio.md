@@ -13,7 +13,7 @@ This article provides a list of techniques that can be used to configure Microso
   - [Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx)
   - [Azure Redis Cache](https://msdn.microsoft.com/en-us/library/azure/dn690523.aspx)
 - Microsoft Visual Studio 2013
-- Microsoft Azure SDK 2.5.1 for .NET or higher
+- Microsoft Azure SDK 2.5.1 for .NET
 - Microsoft Azure Tool for Visual Studio 2013 
 - Microsoft SQL Server Management Studio 2014
 - Sitecore CMS and DMS 7.2 rev. 150408 (7.2 Update-4) or higher

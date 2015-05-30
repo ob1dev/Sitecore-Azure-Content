@@ -12,7 +12,7 @@ This article provides a list of techniques that can be used to configure Microso
   - [Azure Storage](https://msdn.microsoft.com/en-us/library/azure/gg433040.aspx)
   - [Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx)
 - Microsoft Visual Studio 2013
-- Microsoft Azure SDK 2.6 for .NET or higher
+- Microsoft Azure SDK 2.6 for .NET
 - Microsoft Azure Tool for Visual Studio 2013 
 - Microsoft SQL Server Management Studio 2014
 - MongoDB 2.6.1
