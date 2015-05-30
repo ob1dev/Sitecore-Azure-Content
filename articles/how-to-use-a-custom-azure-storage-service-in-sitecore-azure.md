@@ -2,7 +2,7 @@
 
 The Sitecore Azure module automatically creates all Microsoft Azure services it uses during deployment, as well as generates names for them. The pattern for generating names depends on the project name and environment type from the Sitecore Azure Environment file, as well as the deployment location, deployment type, etc.
 
-One of the services used during deployment is the Microsoft Azure Storage Service. Microsoft Azure requires that the name of the Microsoft Azure Storage Service be unique, since it is used as a part of the public URL prefix for the *.blob.core.windows.net, *.table.core.windows.net and *.queue.core.windows.net host names.
+One of the services used during deployment is the [Microsoft Azure Storage Service](https://msdn.microsoft.com/en-us/library/azure/gg433040.aspx). Microsoft Azure requires that the name of the Microsoft Azure Storage Service be unique, since it is used as a part of the public URL prefix for the `*.blob.core.windows.net`, `*.table.core.windows.net` and `*.queue.core.windows.net` host names.
 
 This article provides a list of techniques that can be used to manually create the Microsoft Azure Storage Service and deploy a Sitecore solution using this Storage Service when using the Sitecore Azure module.
 
