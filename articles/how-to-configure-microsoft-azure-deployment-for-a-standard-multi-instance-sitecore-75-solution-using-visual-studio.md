@@ -24,7 +24,7 @@ This article provides a list of techniques that can be used to configure Microso
 
 The recommended approach to configuring multi-instance CM and CD deployments using Visual Studio is as follows:
 
-1. In the **Visual Studio**, configure the Sitecore solution as described in the [How to deploy Sitecore 7.5 solution to Microsoft Azure Cloud Service using Visual Studio](how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio.md) article.
+1. In the **Visual Studio**, configure the Sitecore solution as described in the [How to deploy Sitecore 7.5 solution to Microsoft Azure Cloud Service using Visual Studio](how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio.md) article.
 
    **Note:** Use the following names:
    - For the **ASP.NET Web Application** project – `Sitecore.CD`
@@ -72,12 +72,10 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
      
    For a **Content Management** environment:
    - ScalabilitySettings.config
-   
-   **Note:** Each project must include only corresponding configuration files. For example, include the `\App_Config\Include\SwitchMasterToWeb.config` file in the `Sitecore.CM` projects, but do not include it in the `Sitecore.CM` one.
-
+     
 8. Configure the `Sitecore.CM` and `Sitecore.CD` projects according to the [xDB Configuration Guide](https://sdn.sitecore.net/SDN5/Reference/Sitecore%207/xDB%20Configuration%20Guide.aspx) document. Each project must include the following configuration files in the `\App_Config\Include` folder. 
    
-   For the `Sitecore.CD` project: 
+   For a **Content Delivery** environment:
    - Sitecore.Analytics.config
    - Sitecore.Analytics.ExcludeRobots.config
    - Sitecore.Analytics.Model.config
@@ -111,7 +109,7 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
    - Sitecore.Speak.ItemWebApi.config
    - Sitecore.Speak.Mvc.config
      
-   For the `Sitecore.CM` project:
+   For a **Content Management** environment:
    - \ExperienceProfile\Sitecore.ExperienceProfile.Client.config
    - \ExperienceProfile\Sitecore.ExperienceProfile.config
    - \ExperienceProfile\Sitecore.ExperienceProfile.Reporting.config
@@ -152,7 +150,7 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
    - Sitecore.Speak.Mvc.config
    - Sitecore.WebDAV.config
    
-   **Note:** The above lists of the `*.config` files are based on the configuration, where the **Tracking** server feature is enabled on a **Content Delivery** enviroment, and the **Reporting**, **Processing**, **Aggregation** and **EAS Processing** server feature are enabled on a **Content Management**. enviroment.
+   **Note:** The above lists of the `*.config` files are based on the configuration, where the **Tracking** server feature is enabled on a **Content Delivery** enviroment, and the **Reporting**, **Processing**, **Aggregation** and **EAS Processing** server features are enabled on a **Content Management**. enviroment.
  
 8. Right-click the `Sitecore.Azure` project, and then click the **Publish...** in the context menu to deploy both the Sitecore Content Management and Content Delivery WebRoles.
 
