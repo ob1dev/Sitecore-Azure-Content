@@ -20,9 +20,9 @@ Here is the recommended approach of how you can use your custom Azure Cloud Serv
 
    ![](./media/how-to-use-a-custom-azure-cloud-service-in-sitecore-azure/AzureManagementPortal-02.png)
    
-   **Important:** If you create a custom Cloud Service, you must create a custom Storage Service, too.
+   > **Important:** If you create a custom Cloud Service, you must create a custom Storage Service, too.
    
-   **Note:** For more details about using a custom Azure Storage Service in Sitecore Azure, see the [How to use a custom Azure Storage Service in Sitecore Azure](how-to-use-a-custom-azure-storage-service-in-sitecore-azure.md) article.
+   > **Note:** For more details about using a custom Azure Storage Service in Sitecore Azure, see the [How to use a custom Azure Storage Service in Sitecore Azure](how-to-use-a-custom-azure-storage-service-in-sitecore-azure.md) article.
 
 4. Log in to the **Sitecore Client** and open the **Sitecore Azure** application.
 
