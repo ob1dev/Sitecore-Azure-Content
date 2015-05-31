@@ -42,7 +42,7 @@ Each version of the Sitecore Azure module is built for a particular Microsoft Az
 This table presents Sitecore Azure module compatibility with different versions of Microsoft Azure SDK:
 
 |                    | Azure SDK 1.6 | Azure SDK 1.7 | Azure SDK 1.8 | Azure SDK 2.0 | Azure SDK 2.2 | Azure SDK 2.4 | Azure SDK 2.5.1 |
-| ------------------ | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | --------------- |
+| ------------------ | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-------------: |
 | Sitecore Azure 1.1 | ✓             | -             | -             | -             | -             | -              | -              | 
 | Sitecore Azure 2.0 | -             | ✓             | -             | -             | -             | -              | -              |
 | Sitecore Azure 3.0 | -             | -             | ✓             | -             | -             | -              | -              |
