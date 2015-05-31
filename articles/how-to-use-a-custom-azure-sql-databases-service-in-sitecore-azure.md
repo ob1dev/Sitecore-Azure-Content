@@ -32,7 +32,7 @@ The recommended approach to use a custom Azure SQL Databases Service in Sitecore
 
    ![](./media/how-to-use-a-custom-azure-sql-databases-service-in-sitecore-azure/AzureManagementPortal-05.png)
 
-   **Note:** export the schema and data from Sitecore databases to `*.bacpac` files using the MS SQL Server Management Studio (right click on a database -> Tasks -> Export Data-tier Application...).
+   > **Note:** export the schema and data from Sitecore databases to `*.bacpac` files using the MS SQL Server Management Studio (right click on a database -> Tasks -> Export Data-tier Application...).
    
 7. Log in to the **Sitecore Client** and open the **Sitecore Azure** application.
 
@@ -60,13 +60,13 @@ The recommended approach to use a custom Azure SQL Databases Service in Sitecore
 
    ![](./media/how-to-use-a-custom-azure-sql-databases-service-in-sitecore-azure/SitecoreAzure-06.png)
    
-   **Note:** the analytics item must be inserted only if Sitecore DMS is enabled in the Sitecore solution.
+   > **Note:** the analytics item must be inserted only if Sitecore DMS is enabled in the Sitecore solution.
    
 14. In the `core`, `web` and `analytics` items, fill in the **Target Database** field using a connection string to the imported Sitecore databases in the Azure SQL Databases server.
 
    ![](./media/how-to-use-a-custom-azure-sql-databases-service-in-sitecore-azure/SitecoreAzure-07.png)
    
-   **Note:** the connection string to the Sitecore Core database in the Azure SQL Databases service would be as follows:
+   > **Note:** the connection string to the Sitecore Core database in the Azure SQL Databases service would be as follows:
    
    ```xml
    Data Source=tcp:u7h9dy7k8y.database.windows.net;Initial Catalog=Sitecore_Core;Integrated Security=False;User ID=sitecore@u7h9dy7k8y;Password={your_password_here};Encrypt=True
