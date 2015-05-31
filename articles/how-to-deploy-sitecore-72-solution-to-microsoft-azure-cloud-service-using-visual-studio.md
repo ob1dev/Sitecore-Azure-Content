@@ -4,7 +4,7 @@ After developing a Sitecore solution in Visual Studio, it is possible to manuall
 
 This article provides a list of techniques that can be used to deploy a Sitecore solution to Microsoft Azure using Microsoft Visual Studio.
 
-**Important:** It is highly recommended that you get acquainted with the [Compute Hosting Options Provided by Azure](http://azure.microsoft.com/en-us/documentation/articles/fundamentals-application-models/) and [Microsoft Azure Fundamentals](http://www.microsoftvirtualacademy.com/colleges/Azure-fundamentals) before following the instructions in this article.
+> **Important:** It is highly recommended that you get acquainted with the [Compute Hosting Options Provided by Azure](http://azure.microsoft.com/en-us/documentation/articles/fundamentals-application-models/) and [Microsoft Azure Fundamentals](http://www.microsoftvirtualacademy.com/colleges/Azure-fundamentals) before following the instructions in this article.
 
 **Requirements:**
 - A work or school account / Microsoft account and a Microsoft Azure subscription with the following Azure services enabled:
@@ -18,7 +18,7 @@ This article provides a list of techniques that can be used to deploy a Sitecore
 - Microsoft SQL Server Management Studio 2014
 - Sitecore CMS and DMS 7.2 rev. 150408 (7.2 Update-4) or higher
 
-**Note:** To download the latest version of the Microsoft Azure SDK and Tool for Visual Studio, follow this link: http://azure.microsoft.com/en-us/downloads/
+> **Note:** To download the latest version of the Microsoft Azure SDK and Tool for Visual Studio, follow this link: http://azure.microsoft.com/en-us/downloads/
 
 ##Instructions
 
@@ -28,7 +28,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-01.png)
    
-   **Note:** For information on creating an ASP.NET Web Application project for Sitecore, see the section [How To Create ASP.NET Web Application Project](#how-to-create-aspnet-web-application-project).
+   > **Note:** For information on creating an ASP.NET Web Application project for Sitecore, see the section [How To Create ASP.NET Web Application Project](#how-to-create-aspnet-web-application-project).
    
 2. In the **ASP.NET Web Application** project, modify both the **Web.Debug.config** and **Web.Release.config** files to replace the `connectionStrings` element. Add the following Web.config transformation to use connect strings that target the **Azure SQL Database** service:
    
@@ -45,9 +45,9 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    </configuration>
    ```
    
-   **Note:** For more details about Web.config transformation syntax for Web Project Deployment using Visual Studio, see the MSDN website: http://msdn.microsoft.com/en-us/library/dd465326.aspx
+   > **Note:** For more details about Web.config transformation syntax for Web Project Deployment using Visual Studio, see the MSDN website: http://msdn.microsoft.com/en-us/library/dd465326.aspx
 
-   **Note:** For information on deploying Sitecore databases to Azure, see the section [How To Deploy Sitecore Databases](#how-to-deploy-sitecore-databases).
+   > **Note:** For information on deploying Sitecore databases to Azure, see the section [How To Deploy Sitecore Databases](#how-to-deploy-sitecore-databases).
 
 3. In the **ASP.NET Web Application** project, modify both the `Web.Debug.config` and `Web.Release.config` files to set the path of the `dataFolder` Sitecore variable. Add the following Web.config transformation to set the `\Website\App_Data` directory as a data folder:
    
@@ -82,7 +82,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/File-System-02.png)
    
-   **Note:** The Cloud Service package is limited in size and cannot be more than 1.5 GB. Therefore, the directories listed above must be cleaned to reduce the package size.
+   > **Note:** The Cloud Service package is limited in size and cannot be more than 1.5 GB. Therefore, the directories listed above must be cleaned to reduce the package size.
    
 6. In the file system, place the [Startup.cmd](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/Startup.cmd) file in the `\bin` directory.
 
@@ -138,7 +138,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-02.png)
 
-   **Important:** Visual Studio may freeze when including the entire `\sitecore\shell` directory at once because it contains a lot of files and subdirectories. Try to split all the subdirectories into portions, and then add them one by one.
+   > **Important:** Visual Studio may freeze when including the entire `\sitecore\shell` directory at once because it contains a lot of files and subdirectories. Try to split all the subdirectories into portions, and then add them one by one.
 
 9. For the **Content Management** environment, in the **ASP.NET Web Application** project, modify both the `Web.Debug.config` and `Web.Release.config` files to patch the `Caching.CacheViewState`, `PageStateStore` and `ViewStateStore` Sitecore settings:
 
@@ -227,7 +227,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    </configuration>
    ```
 
-   **Note:** For information on configuring ASP.NET Session State Provider for Azure Redis Cache, see the MSDN website: https://msdn.microsoft.com/en-us/library/azure/dn690522.aspx
+   > **Note:** For information on configuring ASP.NET Session State Provider for Azure Redis Cache, see the MSDN website: https://msdn.microsoft.com/en-us/library/azure/dn690522.aspx
 
 20. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
 
@@ -235,7 +235,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    Install-Package Sitecore.Azure.Diagnostics
    ```
 
-   **Note:** Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\appSettings` element. Replace the `{account-name}` with the name of your storage account, and the `{account-key}` with your account access key.  
+   > **Note:** Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\appSettings` element. Replace the `{account-name}` with the name of your storage account, and the `{account-key}` with your account access key.  
 
 21. In the **ASP.NET Web Application** project, right-click the `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
 
@@ -245,7 +245,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-04.png)
 
-   **Note:** For information regarding using Emulator Express to Run and Debug a Cloud Service Locally, see the MSDN website: https://msdn.microsoft.com/library/azure/dn339018.aspx
+   > **Note:** For information regarding using Emulator Express to Run and Debug a Cloud Service Locally, see the MSDN website: https://msdn.microsoft.com/library/azure/dn339018.aspx
 
 23. Right-click the **Azure Cloud Service** project and click the **Publish...**  in the context menu. The **Publishing Azure Application** dialog box appears.
 
@@ -255,7 +255,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-06.png)
    
-   **Note:** For the basic information about the Publish Azure Application Wizard, see the MSDN website: http://msdn.microsoft.com/en-us/library/azure/hh535756.aspx
+   > **Note:** For the basic information about the Publish Azure Application Wizard, see the MSDN website: http://msdn.microsoft.com/en-us/library/azure/hh535756.aspx
 
 ##How to Create ASP.NET Web Application Project
 
@@ -330,7 +330,7 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
 
    ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-AspNet-09.png)
    
-   **Important:** Modify both the `packages.config` and `\Views\Web.config` files to use the same version of ASP.NET MVC that Sitecore CMS supports. For example, for Sitecore CMS 7.2 that supports ASP.NET MVC 5.1, the version must be 5.1.0:
+   > **Important:** Modify both the `packages.config` and `\Views\Web.config` files to use the same version of ASP.NET MVC that Sitecore CMS supports. For example, for Sitecore CMS 7.2 that supports ASP.NET MVC 5.1, the version must be 5.1.0:
    
    ```xml
    <packages>
@@ -400,7 +400,7 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
     }
     ```  
    
-   **Note:** The default ASP.NET MVC route is not valid for using with Sitecore MVC. See the `Mvc.IllegalRoutes` setting in the `\App_Config\Include\Sitecore.Mvc.config` file for more details.
+   > **Note:** The default ASP.NET MVC route is not valid for using with Sitecore MVC. See the `Mvc.IllegalRoutes` setting in the `\App_Config\Include\Sitecore.Mvc.config` file for more details.
 
 ##How to Deploy Sitecore Databases
 
@@ -468,7 +468,7 @@ The recommended approach to deploy Sitecore databases to the Microsoft Azure SQL
 
   ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-03.png)
   
-  **Note:** Sitecore recommends using [Azure SQL Database V12](http://azure.microsoft.com/en-us/documentation/articles/sql-database-v12-whats-new/) service to get the better experience.
+  > **Note:** Sitecore recommends using [Azure SQL Database V12](http://azure.microsoft.com/en-us/documentation/articles/sql-database-v12-whats-new/) service to get the better experience.
 
 17. In the **SQL Database** blade, fill in the **Name** field and configure the other section if needed, then click the **Create** button.
 
