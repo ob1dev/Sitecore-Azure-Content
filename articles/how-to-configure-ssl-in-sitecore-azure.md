@@ -37,7 +37,7 @@ The recommended approach to configure SSL in Sitecore Azure is as follows:
 
    ![](./media/how-to-configure-ssl-in-sitecore-azure/AzureManagementPortal-01.png)
    
-   **Note:** For more details about using a custom Azure Cloud Service in Sitecore Azure, see the [How to use a custom Azure Storage Service in Sitecore Azure](how-to-use-a-custom-azure-cloud-service-in-sitecore-azure.md) article.
+   **Note:** For more details about using a custom Azure Cloud Service in Sitecore Azure, see the [How to use a custom Azure Cloud Service in Sitecore Azure](how-to-use-a-custom-azure-cloud-service-in-sitecore-azure.md) article.
    
 8. Switch to the **Certificates** tab and click the **Upload** button.
 
