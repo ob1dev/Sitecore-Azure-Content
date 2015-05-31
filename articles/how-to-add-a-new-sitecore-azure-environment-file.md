@@ -52,6 +52,8 @@ Source: System.Xml
 The recommended approach to add a new Sitecore Azure environment file is as follows:
 
 1. Delete an old Environment file in the `/Website/App_Data/AzureEnvironments` directory.
+
+   ![](./media/how-to-add-a-new-sitecore-azure-environment-file/FileSystem-01.png)
  
    > **Note:** the path to the folder is configured by the `Azure.EnvironmentsPath` setting in the `/Website/App_Config/Include/Sitecore.Azure.config` file.
 
