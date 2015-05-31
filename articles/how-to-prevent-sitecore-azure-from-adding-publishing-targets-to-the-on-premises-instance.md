@@ -10,7 +10,7 @@ The module performs the following steps:
 
 2. Updates the `\App_Config\Include\Sitecore.Azure.config` file under the `databases` section. Adds a database definition for the remote Sitecore Web database.
 
-3. Inserting a new `Publishing Target` item under the `/sitecore/system/Publishing targets` one in the Sitecore Master database.
+3. Inserts a new `Publishing Target` item under the `/sitecore/system/Publishing targets` one in the Sitecore Master database.
 
 This article provides a list of techniques that can be used to prevent adding a Publishing Target to on-premises when using the Sitecore Azure module.
 
