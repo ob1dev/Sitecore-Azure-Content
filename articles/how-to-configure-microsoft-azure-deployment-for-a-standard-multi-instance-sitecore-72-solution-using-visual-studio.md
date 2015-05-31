@@ -4,7 +4,7 @@ Sitecore supports distributed solutions that include multiple Sitecore instances
 
 This article provides a list of techniques that can be used to configure Microsoft Azure deployment for a standard multi-instance Sitecore 7.2 solution using Microsoft Visual Studio.
 
-**Important:** It is highly recommended that you get acquainted with the [Compute Hosting Options Provided by Azure](http://azure.microsoft.com/en-us/documentation/articles/fundamentals-application-models/) and [Microsoft Azure Fundamentals](http://www.microsoftvirtualacademy.com/colleges/Azure-fundamentals) before following the instructions in this article.
+> **Important:** It is highly recommended that you get acquainted with the [Compute Hosting Options Provided by Azure](http://azure.microsoft.com/en-us/documentation/articles/fundamentals-application-models/) and [Microsoft Azure Fundamentals](http://www.microsoftvirtualacademy.com/colleges/Azure-fundamentals) before following the instructions in this article.
 
 **Requirements:**
 - A work or school account / Microsoft account and a Microsoft Azure subscription with the following Azure services enabled:
@@ -18,7 +18,7 @@ This article provides a list of techniques that can be used to configure Microso
 - Microsoft SQL Server Management Studio 2014
 - Sitecore CMS and DMS 7.2 rev. 150408 (7.2 Update-4) or higher
 
-**Note:** To download the latest version of the Microsoft Azure SDK and Tool for Visual Studio, follow this link: http://azure.microsoft.com/en-us/downloads/
+> **Note:** To download the latest version of the Microsoft Azure SDK and Tool for Visual Studio, follow this link: http://azure.microsoft.com/en-us/downloads/
 
 ##Solution
 
@@ -26,15 +26,15 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
 
 1. In the **Visual Studio**, configure the Sitecore solution as described in the [How to deploy Sitecore 7.2 solution to Microsoft Azure Cloud Service using Visual Studio](how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio.md) article.
 
-   **Note:** Use the following names:
-   - For the **ASP.NET Web Application** project – `Sitecore.CD`
-   - For the **Azure Cloud Service** project – `Sitecore.Azure`
+   > **Note:** Use the following names:
+   > - For the **ASP.NET Web Application** project – `Sitecore.CD`
+   > - For the **Azure Cloud Service** project – `Sitecore.Azure`
   
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-01.png)
 
 2. In the file system, duplicate both the `Sitecore.CD.csproj` and `Sitecore.CD.csproj.user` files using the `Sitecore.CM.csproj` and `Sitecore.CM.csproj` names.
 
-   **Important:** Both the `Sitecore.CM` and `Sitecore.CD` ASP.NET Web Application projects must be located in the same `\Website` directory to share the same Sitecore directories and files.
+   > **Important:** Both the `Sitecore.CM` and `Sitecore.CD` ASP.NET Web Application projects must be located in the same `\Website` directory to share the same Sitecore directories and files.
 
    ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-02.png)
 
