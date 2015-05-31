@@ -36,9 +36,9 @@ The recommended approach to clean up a failed deployment is as follows:
 
    ![](./media/how-to-clean-up-a-failed-sitecore-azure-deployment/AzurePortal-07-01.png)
 
-   **Note:** By default, there are the `Core` and `Web` databases for the **Delivery Farm** and the `Core`, `Master` and `Web` databases for the **Editing Farm**. Additionally, if Sitecore DMS is enabled, there is the `Analytics` database for both the **Delivery Farm** and **Editing Farm**.
-
-   As an option, you can delete the entire SQL Server instance, if there are only Sitecore databases that belong to the deployment. In the **SQL Databases** section, switch to the **Servers** tab and select a server. Click the **Delete** button in the ribbon. Enter the server name to confirm the deletion.
+   > **Note:** By default, there are the `Core` and `Web` databases for the **Delivery Farm** and the `Core`, `Master` and `Web` databases for the **Editing Farm**. Additionally, if Sitecore DMS is enabled, there is the `Analytics` database for both the **Delivery Farm** and **Editing Farm**.
+   
+   > As an option, you can delete the entire SQL Server instance, if there are only Sitecore databases that belong to the deployment. In the **SQL Databases** section, switch to the **Servers** tab and select a server. Click the **Delete** button in the ribbon. Enter the server name to confirm the deletion.
 
    ![](./media/how-to-clean-up-a-failed-sitecore-azure-deployment/AzurePortal-07-02.png)
 
@@ -54,4 +54,4 @@ The recommended approach to clean up a failed deployment is as follows:
 
    ![](./media/how-to-clean-up-a-failed-sitecore-azure-deployment/AzurePortal-10.png)
 
-   **Note:** Steps 9 and 10 are optional since there might be other deployments that belong to the same traffic manager profile and affinity group. Therefore, you should not delete them.
+   > **Note:** Steps 9 and 10 are optional since there might be other deployments that belong to the same traffic manager profile and affinity group. Therefore, you should not delete them.
