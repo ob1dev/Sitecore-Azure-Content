@@ -4,7 +4,7 @@ Sitecore CMS supports configuration of the Secure Socket Layer (SSL) encryption 
 
 The current article provides a list of techniques that can be used to manually create a self-signed SSL certificate, upload it to Azure Cloud Service, and configure an HTTPS (SSL) endpoint for a Sitecore solution when using the Sitecore Azure module.
 
-**Note:** For the basic information about configuring SSL for an application in Azure, see Microsoft Azure website: 
+> **Note:** For the basic information about configuring SSL for an application in Azure, see Microsoft Azure website: 
 https://azure.microsoft.com/en-us/documentation/articles/cloud-services-configure-ssl-certificate/
 
 #Solution
@@ -37,7 +37,7 @@ The recommended approach to configure SSL in Sitecore Azure is as follows:
 
    ![](./media/how-to-configure-ssl-in-sitecore-azure/AzureManagementPortal-01.png)
    
-   **Note:** For more details about using a custom Azure Cloud Service in Sitecore Azure, see the [How to use a custom Azure Cloud Service in Sitecore Azure](how-to-use-a-custom-azure-cloud-service-in-sitecore-azure.md) article.
+   > **Note:** For more details about using a custom Azure Cloud Service in Sitecore Azure, see the [How to use a custom Azure Cloud Service in Sitecore Azure](how-to-use-a-custom-azure-cloud-service-in-sitecore-azure.md) article.
    
 8. Switch to the **Certificates** tab and click the **Upload** button.
 
@@ -100,15 +100,15 @@ The recommended approach to configure SSL in Sitecore Azure is as follows:
    </Role>
    ``` 
    
-   **Note:** use the copied thumbprint value in the `Certificates` element.
+   > **Note:** use the copied thumbprint value in the `Certificates` element.
    
 16. In the **Hosted Service** section, in the **DNS Host Name** field, set the **Cloud Service** with uploaded certificate (`*.pfx` file) in the **Microsoft Azure Management Portal**.
 
    ![](./media/how-to-configure-ssl-in-sitecore-azure/SitecoreAzure-03.png)
    
-   **Important:** if you create a custom Cloud Service, you must create a custom Storage Service, too.
+   > **Important:** if you create a custom Cloud Service, you must create a custom Storage Service, too.
          
-   **Note:** For more details about using a custom Azure Storage Service in Sitecore Azure, see the [How to use a custom Azure Storage Service in Sitecore Azure](how-to-use-a-custom-azure-storage-service-in-sitecore-azure.md) article.
+   > **Note:** For more details about using a custom Azure Storage Service in Sitecore Azure, see the [How to use a custom Azure Storage Service in Sitecore Azure](how-to-use-a-custom-azure-storage-service-in-sitecore-azure.md) article.
 
 17. Save changes and close the **Content Editor** application.
 
