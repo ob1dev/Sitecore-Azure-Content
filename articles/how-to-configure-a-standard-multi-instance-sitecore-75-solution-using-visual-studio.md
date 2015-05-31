@@ -1,4 +1,4 @@
-#How to configure Microsoft Azure deployment for a standard multi-instance Sitecore 7.5 solution using Visual Studio
+#How to configure a standard multi-instance Sitecore 7.5 solution using Visual Studio
 
 Sitecore supports distributed solutions that include multiple Sitecore instances in both the Content Management (CM) and Content Delivery (CD) environments.
 
@@ -30,17 +30,17 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
    > - For the **ASP.NET Web Application** project – `Sitecore.CD`
    > - For the **Azure Cloud Service** project – `Sitecore.Azure`
   
-   ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-01.png)
+   ![](./media/how-to-configure-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-01.png)
 
 2. In the file system, duplicate both the `Sitecore.CD.csproj` and `Sitecore.CD.csproj.user` files using the `Sitecore.CM.csproj` and `Sitecore.CM.csproj` names.
 
    > **Important:** Both the `Sitecore.CM` and `Sitecore.CD` ASP.NET Web Application projects must be located in the same `\Website` directory to share the same Sitecore directories and files.
 
-   ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-02.png)
+   ![](./media/how-to-configure-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-02.png)
 
 3. In the **Visual Studio**, in the **Solution Explorer**, right-click the solution. Then click the **Add** -> **Existing project...** in the context menu. Add the duplicated `Sitecore.CD` projects to the same Visual Studio solution.
 
-   ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-03.png)
+   ![](./media/how-to-configure-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-03.png)
 
 4. In the **Visual Studio**, in the **Solution Explorer**, include the following Sitecore Content Management related directories in the `Sitecore.CM` project:
    
@@ -58,11 +58,11 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
 
 5. In the **Visual Studio**, in the **Solution Explorer**, under the **Azure Cloud Service** project, right-click the `Roles` item. Then click the **Add** -> **Web Role Project in solution...** in the context menu. The **Associate with Role Project** dialog box appears.
 
-   ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-04.png)
+   ![](./media/how-to-configure-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-04.png)
 
 6. In the **Associate with Role Project** dialog box, select the `Sitecore.CM` project and add it as the second Web Role to the **Azure Cloud Service** project.
 
-   ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-05.png)
+   ![](./media/how-to-configure-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-05.png)
 
 7. Configure the `Sitecore.CM` and `Sitecore.CD` projects according to the [Sitecore Scaling Guide](http://sdn.sitecore.net/Reference/Sitecore%207/Scaling%20Guide.aspx) document. Each project must include the following configuration files in the `\App_Config\Include` folder.
 
@@ -154,4 +154,4 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
  
 8. Right-click the `Sitecore.Azure` project, and then click the **Publish...** in the context menu to deploy both the Sitecore Content Management and Content Delivery WebRoles.
 
-   ![](./media/how-to-configure-microsoft-azure-deployment-for-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-06.png)
+   ![](./media/how-to-configure-a-standard-multi-instance-sitecore-75-solution-using-visual-studio/VS-06.png)
