@@ -78,3 +78,4 @@ The recommended approach to configuring multi-instance CM and CD deployments usi
 8. Right-click the `Sitecore.Azure` project, and then click the **Publish...** in the context menu to deploy both the Sitecore Content Management and Content Delivery WebRoles.
 
    ![](./media/how-to-configure-a-standard-multi-instance-sitecore-72-solution-using-visual-studio/VS-06.png)
+   
