@@ -56,6 +56,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    - \default.css
    - \default.htm.sitedown
    - \default.js
+   - \Global.asax
    - \Web.config
    - \webedit.css
 
@@ -92,6 +93,8 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    > **Note:** Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\connectionStrings` element.
    > - For SQL Server connection strings, replace the `{server-name}` with the name of your Azure SQL Database service. The `{server-admin-login}` and `{password}` with SQL Server account credentials. 
    > - For MongoDB connection strings, replace the `{host}` with the URL of your Mongo service. The `{user-name}` and `{password}` with your Mongo account credentials.
+   
+   > **Note:** For information on deploying Sitecore databases to Azure, see the section [How To Deploy Sitecore Databases](#how-to-deploy-sitecore-databases).
     
 5. In the **ASP.NET Web Application** project, include the `Startup.cmd` file in the the `\bin` folder.
 
@@ -118,6 +121,8 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 8. In the **ASP.NET Web Application** project, right-click the `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
 
    ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-05.png)
+
+   > **Note:** For more details about Web.config transformation syntax for Web Project Deployment using Visual Studio, see the MSDN website: http://msdn.microsoft.com/en-us/library/dd465326.aspx
 
 9. Right-click on the **Azure Cloud Service** project, and click the **Set as StartUp Project** in the context menu. Use Azure Computer Emulator to run and debug Sitecore instance locally.
 
