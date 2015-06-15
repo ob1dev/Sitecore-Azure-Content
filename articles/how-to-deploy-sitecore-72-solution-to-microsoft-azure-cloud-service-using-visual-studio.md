@@ -48,6 +48,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    - \default.css
    - \default.htm.sitedown
    - \default.js
+   - \Global.asax
    - \Web.config
    - \webedit.css
 
