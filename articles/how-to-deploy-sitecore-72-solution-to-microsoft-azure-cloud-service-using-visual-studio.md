@@ -169,7 +169,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 17. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
 
    ```xml
-   Install-Package Sitecore.Azure.Diagnostics
+   Install-Package Sitecore.Azure.Diagnostics -Version 7.2.1
    ```
 
    > **Note:** Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\appSettings` element. Replace the `{account-name}` with the name of your storage account, and the `{account-key}` with your account access key.  
