@@ -68,17 +68,17 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    
    > **Note:** For information on deploying Sitecore databases to Azure, see the section [How To Deploy Sitecore Databases](#how-to-deploy-sitecore-databases).
       
-   ```
-   Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Core;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True
-   Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Master;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True
-   Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Web;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True
-   Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Reporting;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True
-   Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Session;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True
+   ```xml
+   Server=tcp:{server-name}.database.windows.net,1433;Database=Sitecore.Core;User ID={server-admin-login}@{server-name};Password={password};Trusted_Connection=False;Encrypt=True
+   Server=tcp:{server-name}.database.windows.net,1433;Database=Sitecore.Master;User ID={server-admin-login}@{server-name};Password={password};Trusted_Connection=False;Encrypt=True
+   Server=tcp:{server-name}.database.windows.net,1433;Database=Sitecore.Web;User ID={server-admin-login}@{server-name};Password={password};Trusted_Connection=False;Encrypt=True
+   Server=tcp:{server-name}.database.windows.net,1433;Database=Sitecore.Reporting;User ID={server-admin-login}@{server-name};Password={password};Trusted_Connection=False;Encrypt=True
+   Server=tcp:{server-name}.database.windows.net,1433;Database=Sitecore.Session;User ID={server-admin-login}@{server-name};Password={password};Trusted_Connection=False;Encrypt=True
    
-   mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_analytics
-   mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_lives
-   mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_historys
-   mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_contact 
+   mongodb://{user-name}:{password}@{host}/sitecore_analytics
+   mongodb://{user-name}:{password}@{host}/sitecore_tracking_lives
+   mongodb://{user-name}:{password}@{host}/sitecore_tracking_historys
+   mongodb://{user-name}:{password}@{host}/sitecore_tracking_contact 
    ```
    
 7. In the **sitecore80 Web App** blade, click the **Get publish settings** button and save the **\*.PublishSettings** file in the file system.
