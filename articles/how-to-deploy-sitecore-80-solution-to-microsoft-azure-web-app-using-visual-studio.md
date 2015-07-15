@@ -44,7 +44,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
  
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-05.png)
  
-6. In the **Application settings** blade, configure the following groups.
+6. In the **Application settings** blade, configure the following groups and save the changes.
  
    In the **General settings** group:
    
@@ -57,36 +57,35 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    
    In the **Connection strings** group:
    
-   - Add all default Sitecore connection strings.   
-   
-     | Name             | Value                                                                                                                                                                                       | Type         |
-     | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-     | core             | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Core;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True      | SQL Database |
-     | master           | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Master;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True    | SQL Database |
-     | web              | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Web;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True       | SQL Database |
-     | reporting        | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Reporting;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True | SQL Database |
-     | session          | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Session;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True   | SQL Database |
-     | analytics        | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_analytics                                                                                                                            | Custom       |  
-     | tracking.live    | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_lives                                                                                                                       | Custom       |
-     | tracking.history | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_historys                                                                                                                    | Custom       |
-     | tracking.contact | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_contact                                                                                                                     | Custom       |
+   - Add the `core`, `master`, `web`, `reporting` and `session` SQL Database connection strings.
+   - Add the `analytics`, `tracking.live`, `tracking.history` and `tracking.contact` MongoDB connection strings.   
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-07.png)
 
+   > **Note:** Use the following templates as an example of default Sitecore connection strings:
    > - For SQL Server connection strings, replace the `{server-name}` with the name of your Azure SQL Database service. The `{server-admin-login}` and `{password}` with SQL Server account credentials. 
    > - For MongoDB connection strings, replace the `{host}` with the URL of your Mongo service. The `{user-name}` and `{password}` with your Mongo account credentials.
    
    > **Note:** For information on deploying Sitecore databases to Azure, see the section [How To Deploy Sitecore Databases](#how-to-deploy-sitecore-databases).
+      
+   ```
+   Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Core;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True
+   Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Master;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True
+   Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Web;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True
+   Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Reporting;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True
+   Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Session;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True
+   
+   mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_analytics
+   mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_lives
+   mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_historys
+   mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_contact 
+   ```
+   
+7. In the **sitecore80 Web App** blade, click the **Get publish settings** button and save the **sitecore80.PublishSettings** file in the file system.
  
-7. In the **Web app settings** blade, save the changes and then close the both the **Web app settings** and **Settings** blades.
-
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-08.png)
-
-8. In the **sitecore80 Web App** blade, click the **Get publish settings** button and save the **sitecore80.PublishSettings** file in the file system.
  
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-09.png)
- 
-9. In the **ASP.NET Web Application** project, include the default Sitecore files, directories and subdirectories: 
+8. In the **ASP.NET Web Application** project, include the default Sitecore files, directories and subdirectories: 
 
    > **Note:** For information on creating an ASP.NET Web Application project for Sitecore, see the section [How To Create ASP.NET Web Application Project](how-to-create-aspnet-web-application-project.md).
 
@@ -148,27 +147,27 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
     
    > To address the error, in the **Solution Explorer** window select the `\sitecore\shell\ClientBin\EmptySplashScreen.xaml` item and set the **Build Action** to the **Content** value.
     
-10. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
+9. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
   
-    ```
-    Install-Package Sitecore.Azure.Setup -Version 8.0.0
-    ```
+   ```
+   Install-Package Sitecore.Azure.Setup -Version 8.0.0
+   ```
    
-11. In the **ASP.NET Web Application** project, right-click the `App_Data` item. Add the `license.xml` and `webdav.lic` files using the **Add** -> **Existing Item...** command in the context menu.
+10. In the **ASP.NET Web Application** project, right-click the `App_Data` item. Add the `license.xml` and `webdav.lic` files using the **Add** -> **Existing Item...** command in the context menu.
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-02.png)
 
-12. In the **ASP.NET Web Application** project, right-click the `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
+11. In the **ASP.NET Web Application** project, right-click the `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-03.png)
 
    > **Note:** For more details about Web.config transformation syntax for Web Project Deployment using Visual Studio, see the MSDN website: http://msdn.microsoft.com/en-us/library/dd465326.aspx
  
-13. Right-click the **ASP.NET Web Application** project, and then click the **Publish...**  in the context menu. The **Publish Web** dialog box appears.     
+12. Right-click the **ASP.NET Web Application** project, and then click the **Publish...**  in the context menu. The **Publish Web** dialog box appears.     
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-04.png)
 
-14. In the **Publish Web** dialog box, in the **Profile** step, click the **Import** option and upload the **sitecore80.PublishSettings** file. 
+13. In the **Publish Web** dialog box, in the **Profile** step, click the **Import** option and upload the **sitecore80.PublishSettings** file. 
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-05.png)
 
