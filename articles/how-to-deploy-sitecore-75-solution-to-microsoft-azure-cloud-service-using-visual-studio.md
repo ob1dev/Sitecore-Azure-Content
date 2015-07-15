@@ -69,6 +69,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    - \sitecore\login
    - \sitecore\portal
    - \sitecore\samples
+   - \sitecore\service
    - \sitecore\shell
    - \sitecore\blocked.aspx
    - \sitecore\default.aspx
@@ -260,5 +261,5 @@ Exported Sitecore databases as `*.bacpac` files:
 - [Sitecore75.Core.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Core.bacpac)
 - [Sitecore75.Master.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Master.bacpac)
 - [Sitecore75.Web.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Web.bacpac)
-- [Sitecore75.Reporting.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Analytics.bacpac)
+- [Sitecore75.Reporting.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Reporting.bacpac)
 - [Sitecore75.Session.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Session.bacpac)
