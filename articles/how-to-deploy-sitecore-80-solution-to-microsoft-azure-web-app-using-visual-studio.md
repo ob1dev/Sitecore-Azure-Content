@@ -26,23 +26,23 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
 1. Log in to the **Microsoft Azure Portal** using the https://portal.azure.com URL.
   
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-WebApp-01.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-01.png)
   
 2. In the **Jumpbar**, click the **New** button, then select the **Web + Mobile** section and click the **Web App** button. The **Web App** blade appears.
    
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-WebApp-02.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-02.png)
    
 3. In the **Web App** blade, fill in the **URL** field and configure the other section if needed, then click the **Create** button. 
  
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-WebApp-03.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-03.png)
  
 4. In the **Startboard**, click on the **sitecore-80** Web App tile.
 
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-WebApp-04.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-04.png)
 
 5. In the **sitecore80 Web App** blade, click the **All settings** button. The **Settings** blade appears.
  
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-WebApp-05.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-05.png)
  
 6. In the **Settings** blade, click on the **Application settings** section and configure the following groups.
  
@@ -53,7 +53,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    - Set the **Always On** switcher to the the **On** value.
    - \[Optional\] Set the **Remote debugging** switcher to the **On** value and select your Visual Studio version.
    
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-WebApp-06.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-06.png)
    
    In the **Connection strings** group:
    
@@ -71,7 +71,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 | tracking.history | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_historys                                                                                                                    | Custom       |
 | tracking.contact | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_contact                                                                                                                     | Custom       |
 
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-WebApp-07.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-07.png)
 
    > - For SQL Server connection strings, replace the `{server-name}` with the name of your Azure SQL Database service. The `{server-admin-login}` and `{password}` with SQL Server account credentials. 
    > - For MongoDB connection strings, replace the `{host}` with the URL of your Mongo service. The `{user-name}` and `{password}` with your Mongo account credentials.
@@ -80,11 +80,11 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
  
 7. In the **Web app settings** blade, save the changes and then close the both the **Web app settings** and **Settings** blades.
 
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-WebApp-08.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-08.png)
 
 8. In the **sitecore80 Web App** blade, click the **Get publish settings** button and save the **sitecore80.PublishSettings** file in the file system.
  
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-WebApp-09.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-09.png)
  
 9. In the **ASP.NET Web Application** project, include the default Sitecore files, directories and subdirectories: 
 
@@ -130,7 +130,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    - \sitecore\default.aspx
    - \sitecore\no.css
 
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-01.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-01.png)
 
    > **Important:** Visual Studio may freeze when including the entire `\sitecore\shell` directory at once because it contains a lot of files and subdirectories. Try to split all the subdirectories into portions, and then add them one by one.
 
@@ -154,24 +154,22 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
     Install-Package Sitecore.Azure.Setup -Version 8.0.0
     ```
    
-   > **Note:** For information on deploying Sitecore databases to Azure, see the section [How To Deploy Sitecore Databases](#how-to-deploy-sitecore-databases).
-    
 11. In the **ASP.NET Web Application** project, right-click the `App_Data` item. Add the `license.xml` and `webdav.lic` files using the **Add** -> **Existing Item...** command in the context menu.
 
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-02.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-02.png)
 
 12. In the **ASP.NET Web Application** project, right-click the `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
 
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-03.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-03.png)
 
    > **Note:** For more details about Web.config transformation syntax for Web Project Deployment using Visual Studio, see the MSDN website: http://msdn.microsoft.com/en-us/library/dd465326.aspx
  
 13. Right-click the **ASP.NET Web Application** project, and then click the **Publish...**  in the context menu. The **Publish Web** dialog box appears.     
 
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-04.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-04.png)
 
 14. In the **Publish Web** dialog box, in the **Profile** step, click the **Import** option and upload the **sitecore80.PublishSettings** file. 
 
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-05.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-05.png)
 
    > **Note:** For the basic information about the Publish Web Wizard, see the MSDN website: https://msdn.microsoft.com/en-us/library/dd465337(v=vs.110).aspx 
