@@ -280,5 +280,5 @@ Exported Sitecore databases as `*.bacpac` files:
 - [Sitecore80.Core.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Core.bacpac)
 - [Sitecore80.Master.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Master.bacpac)
 - [Sitecore80.Web.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Web.bacpac)
-- [Sitecore80.Reporting.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Analytics.bacpac)
+- [Sitecore80.Reporting.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Reporting.bacpac)
 - [Sitecore80.Session.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Session.bacpac)
