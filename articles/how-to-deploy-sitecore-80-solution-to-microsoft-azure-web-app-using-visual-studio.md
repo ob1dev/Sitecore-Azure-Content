@@ -273,3 +273,12 @@ The recommended approach to deploy Sitecore databases to the Microsoft Azure SQL
   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-SQL-11.png)
 
 25. Repeat steps 22-24 for each Sitecore database you want to import.
+
+##Download Options
+
+Exported Sitecore databases as `*.bacpac` files:
+- [Sitecore80.Core.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Core.bacpac)
+- [Sitecore80.Master.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Master.bacpac)
+- [Sitecore80.Web.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Web.bacpac)
+- [Sitecore80.Reporting.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Analytics.bacpac)
+- [Sitecore80.Session.bacpac](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/Sitecore80.Session.bacpac)
