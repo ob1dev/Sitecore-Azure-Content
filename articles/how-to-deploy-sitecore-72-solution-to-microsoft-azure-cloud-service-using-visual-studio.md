@@ -60,6 +60,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    - \sitecore\login
    - \sitecore\portal
    - \sitecore\samples
+   - \sitecore\service
    - \sitecore\shell
    - \sitecore\blocked.aspx
    - \sitecore\default.aspx
