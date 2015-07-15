@@ -40,11 +40,11 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-04.png)
 
-5. In the **sitecore80 Web App** blade, click the **All settings** button. The **Settings** blade appears.
+5. In the **sitecore80 Web App** blade, click the **All settings** button and select the **Application settings** section.
  
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-05.png)
  
-6. In the **Settings** blade, click on the **Application settings** section and configure the following groups.
+6. In the **Application settings** blade, configure the following groups.
  
    In the **General settings** group:
    
@@ -57,19 +57,19 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    
    In the **Connection strings** group:
    
-   - Add all default Sitecore connection strings.
+   - Add all default Sitecore connection strings.   
    
-| Name             | Value                                                                                                                                                                                       | Type         |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| core             | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Core;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True      | SQL Database |
-| master           | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Master;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True    | SQL Database |
-| web              | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Web;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True       | SQL Database |
-| reporting        | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Reporting;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True | SQL Database |
-| session          | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Session;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True   | SQL Database |
-| analytics        | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_analytics                                                                                                                            | Custom       |  
-| tracking.live    | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_lives                                                                                                                       | Custom       |
-| tracking.history | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_historys                                                                                                                    | Custom       |
-| tracking.contact | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_contact                                                                                                                     | Custom       |
+     | Name             | Value                                                                                                                                                                                       | Type         |
+     | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+     | core             | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Core;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True      | SQL Database |
+     | master           | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Master;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True    | SQL Database |
+     | web              | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Web;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True       | SQL Database |
+     | reporting        | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Reporting;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True | SQL Database |
+     | session          | Server=tcp:\{server-name\}.database.windows.net,1433;Database=Sitecore.Session;User ID=\{server-admin-login\}@\{server-name\};Password=\{password\};Trusted_Connection=False;Encrypt=True   | SQL Database |
+     | analytics        | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_analytics                                                                                                                            | Custom       |  
+     | tracking.live    | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_lives                                                                                                                       | Custom       |
+     | tracking.history | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_historys                                                                                                                    | Custom       |
+     | tracking.contact | mongodb://\{user-name\}:\{password\}@\{host\}/sitecore_tracking_contact                                                                                                                     | Custom       |
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-07.png)
 
