@@ -74,7 +74,7 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
 
    ![](./media/how-to-create-aspnet-web-application-project/VS-AspNet-09.png)
    
-   > **Important:** Modify both the `packages.config` and `\Views\Web.config` files to use the same version of ASP.NET MVC that Sitecore CMS supports. For example, for Sitecore CMS 7.2 that supports ASP.NET MVC 5.1, the version must be 5.1.0:
+   > **Important:** Modify both the `packages.config` and `\Views\Web.config` files to use the same version of ASP.NET MVC that Sitecore CMS supports. For example, for Sitecore CMS 7.2, 7.5 and 8.0 that support ASP.NET MVC 5.1, the version must be 5.1.0:
    
    ```xml
    <packages>
@@ -145,3 +145,10 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
     ```  
    
    > **Note:** The default ASP.NET MVC route is not valid for using with Sitecore MVC. See the `Mvc.IllegalRoutes` setting in the `\App_Config\Include\Sitecore.Mvc.config` file for more details.
+   
+##Download Options
+
+Empty ASP.NET Web Application Projects:
+- [Sitecore ASP.NET MVC.zip](./media/how-to-create-aspnet-web-application-project/Sitecore ASP.NET MVC.zip)
+- [Sitecore ASP.NET Web Forms.zip](./media/how-to-create-aspnet-web-application-project/Sitecore ASP.NET Web Forms.zip)
+- [Sitecore ASP.NET Web Forms and MVC.zip](./media/how-to-create-aspnet-web-application-project/Sitecore ASP.NET Web Forms and MVC.zip)
