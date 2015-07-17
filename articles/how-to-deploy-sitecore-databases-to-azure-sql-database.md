@@ -9,7 +9,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
    
 2. In the **SQL Server Management Studio**, in the **Object Explorer**, right-click a Sitecore database, and select **Tasks -> Export Data-tier Application...** in the context menu. The **Export data-tier Application** dialog box appears. 
 
-   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database-to-azure-sql-database/SSMS-01.png)
+   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-01.png)
 
 3. In the **Export data-tier Application** dialog box, click the **Next >** button to go to the **Export Settings** step. 
 
