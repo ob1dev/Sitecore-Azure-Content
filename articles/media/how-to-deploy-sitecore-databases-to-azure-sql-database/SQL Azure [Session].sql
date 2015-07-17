@@ -1,4 +1,4 @@
-USE [sc75rev141003Sitecore_sessions]
+USE [Sitecore_session]
 GO
 
 /****** Object:  StoredProcedure [dbo].[CreateTables] ******/
