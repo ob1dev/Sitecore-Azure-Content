@@ -52,13 +52,13 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
      + Set the **Always On** switcher to the the **On** value.
      + \[Optional\] Set the **Remote debugging** switcher to the **On** value and select the Visual Studio version.
    
-     ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-06.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-06.png)
    
    - In the **Connection strings** group:
      + Add the `core`, `master`, `web`, `reporting` and `session` SQL Database connection strings.
      + Add the `analytics`, `tracking.live`, `tracking.history` and `tracking.contact` MongoDB connection strings.   
 
-     ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-07.png)
+   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-07.png)
   
    > **Note:** For information on deploying Sitecore databases to Azure, see the section [How to deploy Sitecore databases to Azure SQL Database](how-to-deploy-sitecore-databases-to-azure-sql-database.md).
       
@@ -76,56 +76,54 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    ```
    
    > **Note:** Use the above templates as an example of default Sitecore connection strings:
-   > - For SQL Server connection strings, replace the `{server-name}` with the name of your Azure SQL Database service. The `{server-admin-login}` and `{password}` with SQL Server account credentials. 
+   > - For SQL Database connection strings, replace the `{server-name}` with the name of your Azure SQL Database service. The `{server-admin-login}` and `{password}` with SQL Server account credentials. 
    > - For MongoDB connection strings, replace the `{host}` with the URL of your Mongo service. The `{user-name}` and `{password}` with your Mongo account credentials.
    
 7. In the **sitecore80 Web App** blade, click the **Get publish settings** button and save the **\*.PublishSettings** file in the file system.
  
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-08.png)
  
-8. In the **ASP.NET Web Application** project, include the default Sitecore files, directories and subdirectories: 
+8. In the **ASP.NET Web Application** project, include the default Sitecore files, directories and subdirectories. 
 
    > **Note:** For information on creating an ASP.NET Web Application project for Sitecore, see the section [How To Create ASP.NET Web Application Project](how-to-create-aspnet-web-application-project.md).
 
-   For a **Content Delivery** environment:
+   - For a **Content Delivery** environment:
+     + \App_Browsers
+     + \App_Config
+     + \App_Data
+     + \Areas
+     + \bin
+     + \Controllers
+     + \layouts
+     + \Models
+     + \sitecore\services
+     + \sitecore modules
+     + \sitecore_files
+     + \temp
+     + \upload
+     + \Views
+     + \xsl
+     + \Default.aspx
+     + \default.css
+     + \default.htm.sitedown
+     + \default.js
+     + \Global.asax
+     + \Web.config
+     + \webedit.css
 
-   - \App_Browsers
-   - \App_Config
-   - \App_Data
-   - \Areas
-   - \bin
-   - \Controllers
-   - \layouts
-   - \Models
-   - \sitecore\services
-   - \sitecore modules
-   - \sitecore_files
-   - \temp
-   - \upload
-   - \Views
-   - \xsl
-   - \Default.aspx
-   - \default.css
-   - \default.htm.sitedown
-   - \default.js
-   - \Global.asax
-   - \Web.config
-   - \webedit.css
-
-   For a **Content Management** environment, additionally include the following directories and files:
-   
-   - \sitecore\admin
-   - \sitecore\Copyright
-   - \sitecore\debug
-   - \sitecore\images
-   - \sitecore\login
-   - \sitecore\portal
-   - \sitecore\samples
-   - \sitecore\service
-   - \sitecore\shell
-   - \sitecore\blocked.aspx
-   - \sitecore\default.aspx
-   - \sitecore\no.css
+   - For a **Content Management** environment, additionally include the following directories and files:
+     + \sitecore\admin
+     + \sitecore\Copyright
+     + \sitecore\debug
+     + \sitecore\images
+     + \sitecore\login
+     + \sitecore\portal
+     + \sitecore\samples
+     + \sitecore\service
+     + \sitecore\shell
+     + \sitecore\blocked.aspx
+     + \sitecore\default.aspx
+     + \sitecore\no.css
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-01.png)
 
