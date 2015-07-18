@@ -85,7 +85,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    Build: Cannot compile external modules unless the '--module' flag is provided.
    ```
    
-   To address the error, in the **ASP.NET Web Application** project's properties, switch to the **TypeScript Build** section and set the **AMD** as the **Module system**. Otherwise, exclude the following files from the project:
+   To address the above error, in the **ASP.NET Web Application** project's properties, switch to the **TypeScript Build** section and set the **Module system** property to the **AMD** value. Otherwise, exclude the following files from the project:
    - \sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts
    - \sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.d.ts  
        
