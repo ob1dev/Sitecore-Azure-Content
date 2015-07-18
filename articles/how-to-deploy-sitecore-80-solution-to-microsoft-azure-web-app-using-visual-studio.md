@@ -88,6 +88,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    > **Note:** For information on creating an ASP.NET Web Application project for Sitecore, see the section [How To Create ASP.NET Web Application Project](how-to-create-aspnet-web-application-project.md).
 
    - For a **Content Delivery** environment:
+   
      + \App_Browsers
      + \App_Config
      + \App_Data
@@ -112,6 +113,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
      + \webedit.css
 
    - For a **Content Management** environment, additionally include the following directories and files:
+   
      + \sitecore\admin
      + \sitecore\Copyright
      + \sitecore\debug
