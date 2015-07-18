@@ -36,44 +36,44 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
     Update-Package Newtonsoft.Json -Version 6.0.3
     ```
    
-3. In the **ASP.NET Web Application** project, include the default Sitecore files, directories and subdirectories: 
+3. In the **ASP.NET Web Application** project, include the default Sitecore files, directories and subdirectories.
 
-   For a **Content Delivery** environment:
+   - For a **Content Delivery** environment:
 
-   - \App_Browsers
-   - \App_Config
-   - \App_Data
-   - \bin
-   - \layouts
-   - \sitecore\services
-   - \sitecore\shell\Override
-   - \sitecore modules
-   - \sitecore_files
-   - \temp
-   - \upload
-   - \xsl
-   - \Default.aspx
-   - \default.css
-   - \default.htm.sitedown
-   - \default.js
-   - \Global.asax
-   - \Web.config
-   - \webedit.css
+     + \App_Browsers
+     + \App_Config
+     + \App_Data
+     + \bin
+     + \layouts
+     + \sitecore\services
+     + \sitecore\shell\Override
+     + \sitecore modules
+     + \sitecore_files
+     + \temp
+     + \upload
+     + \xsl
+     + \Default.aspx
+     + \default.css
+     + \default.htm.sitedown
+     + \default.js
+     + \Global.asax
+     + \Web.config
+     + \webedit.css
 
-   For a **Content Management** environment, additionally include the following directories and files:
+   - For a **Content Management** environment, additionally include the following directories and files:
    
-   - \sitecore\admin
-   - \sitecore\Copyright
-   - \sitecore\debug
-   - \sitecore\images
-   - \sitecore\login
-   - \sitecore\portal
-   - \sitecore\samples
-   - \sitecore\service
-   - \sitecore\shell
-   - \sitecore\blocked.aspx
-   - \sitecore\default.aspx
-   - \sitecore\no.css
+     + \sitecore\admin
+     + \sitecore\Copyright
+     + \sitecore\debug
+     + \sitecore\images
+     + \sitecore\login
+     + \sitecore\portal
+     + \sitecore\samples
+     + \sitecore\service
+     + \sitecore\shell
+     + \sitecore\blocked.aspx
+     + \sitecore\default.aspx
+     + \sitecore\no.css
 
    ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-02.png)
 
