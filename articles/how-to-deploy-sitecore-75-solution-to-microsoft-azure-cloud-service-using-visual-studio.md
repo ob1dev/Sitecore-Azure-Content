@@ -79,13 +79,15 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    > **Important:** Visual Studio may freeze when including the entire `\sitecore\shell` directory at once because it contains a lot of files and subdirectories. Try to split all the subdirectories into portions, and then add them one by one.
 
-4. For a **Content Management** environment, Visual Studio may throw the following build errors: 
+4. For a **Content Management** environment, Visual Studio may throw the following build error: 
  
    ```
-   Build: Cannot compile external modules unless the '--module' flag is provided.	C:\inetpub\wwwroot\Sitecore75\Website\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts
+   Build: Cannot compile external modules unless the '--module' flag is provided.
    ```
    
-   To address the error, in the **ASP.NET Web Application** project's properties, switch to the **TypeScript Build** section and set the **AMD** as the **Module system**. Otherwise, exclude both the `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts` and `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.d.ts` files from the project.  
+   To address the error, in the **ASP.NET Web Application** project's properties, switch to the **TypeScript Build** section and set the **AMD** as the **Module system**. Otherwise, exclude the following files from the project:
+   - \sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts
+   - \sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.d.ts  
        
 5. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
   
