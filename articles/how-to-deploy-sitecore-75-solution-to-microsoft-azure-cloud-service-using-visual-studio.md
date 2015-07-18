@@ -79,13 +79,15 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    > **Important:** Visual Studio may freeze when including the entire `\sitecore\shell` directory at once because it contains a lot of files and subdirectories. Try to split all the subdirectories into portions, and then add them one by one.
 
-   > **Note:** Visual Studio may throw the following build error. To address the error, in the **ASP.NET Web Application** project's properties, switch to the **TypeScript Build** section and set the **AMD** as the **Module system**. Otherwise, exclude both the `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts` and `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.d.ts` files from the project.  
+4. For a **Content Management** environment, Visual Studio may throw the following build errors: 
+ 
+   ```
+   Build: Cannot compile external modules unless the '--module' flag is provided.	C:\inetpub\wwwroot\Sitecore75\Website\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts
+   ```
    
-    ```
-    Build: Cannot compile external modules unless the '--module' flag is provided.	C:\inetpub\wwwroot\Sitecore75\Website\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts
-    ```   
-    
-4. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
+   - To address the error, in the **ASP.NET Web Application** project's properties, switch to the **TypeScript Build** section and set the **AMD** as the **Module system**. Otherwise, exclude both the `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts` and `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.d.ts` files from the project.  
+       
+5. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
   
     ```
     Install-Package Sitecore.Azure.Setup -Version 7.5.0
@@ -94,14 +96,14 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    > **Note:** Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\connectionStrings` element.
    > - For SQL Server connection strings, replace the `{server-name}` with the name of your Azure SQL Database service. The `{server-admin-login}` and `{password}` with SQL Server account credentials. 
    > - For MongoDB connection strings, replace the `{host}` with the URL of your Mongo service. The `{user-name}` and `{password}` with your Mongo account credentials.
-   
-   > **Note:** For information on deploying Sitecore databases to Azure, see the section [How To Deploy Sitecore Databases](#how-to-deploy-sitecore-databases).
+   </br>
+   > **Note:** For information on deploying Sitecore databases to Azure, see the section [How to deploy Sitecore databases to Azure SQL Database](how-to-deploy-sitecore-databases-to-azure-sql-database.md).
     
-5. In the **ASP.NET Web Application** project, include the `Startup.cmd` file in the the `\bin` folder.
+6. In the **ASP.NET Web Application** project, include the `Startup.cmd` file in the the `\bin` folder.
 
    ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-03.png)
 
-6. In the **Azure Cloud Service** project, modify the `ServiceDefinition.csdef` file under the `WebRole` element. Add the following task definition to execute the `Startup.cmd` file:
+7. In the **Azure Cloud Service** project, modify the `ServiceDefinition.csdef` file under the `WebRole` element. Add the following task definition to execute the `Startup.cmd` file:
 
     ```xml
     <ServiceDefinition>
@@ -115,11 +117,11 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
     </ServiceDefinition>
     ```
 
-7. In the **ASP.NET Web Application** project, right-click the `App_Data` item. Add the `license.xml` and `webdav.lic` files using the **Add** -> **Existing Item...** command in the context menu.
+8. In the **ASP.NET Web Application** project, right-click the `App_Data` item. Add the `license.xml` and `webdav.lic` files using the **Add** -> **Existing Item...** command in the context menu.
 
    ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-04.png)
 
-8. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
+9. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
 
    ```xml
    Install-Package Sitecore.Azure.Diagnostics -Version 7.5.0
@@ -127,134 +129,24 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    > **Note:** Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\appSettings` element. Replace the `{account-name}` with the name of your storage account, and the `{account-key}` with your account access key.  
 
-9. In the **ASP.NET Web Application** project, right-click the `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
+10. In the **ASP.NET Web Application** project, right-click the `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
 
    ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-05.png)
 
    > **Note:** For more details about Web.config transformation syntax for Web Project Deployment using Visual Studio, see the MSDN website: http://msdn.microsoft.com/en-us/library/dd465326.aspx
 
-10. Right-click on the **Azure Cloud Service** project, and click the **Set as StartUp Project** in the context menu. Use Azure Computer Emulator to run and debug Sitecore instance locally.
+11. Right-click on the **Azure Cloud Service** project, and click the **Set as StartUp Project** in the context menu. Use Azure Computer Emulator to run and debug Sitecore instance locally.
 
    ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-06.png)
 
    > **Note:** For information regarding using Emulator Express to Run and Debug a Cloud Service Locally, see the MSDN website: https://msdn.microsoft.com/library/azure/dn339018.aspx
    
-11. Right-click the **Azure Cloud Service** project, and then click the **Publish...**  in the context menu. The **Publishing Azure Application** dialog box appears.     
+12. Right-click the **Azure Cloud Service** project, and then click the **Publish...**  in the context menu. The **Publishing Azure Application** dialog box appears.     
 
    ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-07.png)
 
-12. In the **Publishing Azure Application** dialog box, publish the **Sitecore** solution to the **Microsoft Azure Cloud Platform**. 
+13. In the **Publishing Azure Application** dialog box, publish the **Sitecore** solution to the **Microsoft Azure Cloud Platform**. 
 
    ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-08.png)
 
    > **Note:** For the basic information about the Publish Azure Application Wizard, see the MSDN website: http://msdn.microsoft.com/en-us/library/azure/hh535756.aspx
-
-##How to Deploy Sitecore Databases
-
-The recommended approach to deploy Sitecore databases to the Microsoft Azure SQL Database service is as follows:
-
-1. Update the Sitecore database schema to fit the **Azure SQL Database** service requirements:
-   - For Sitecore XP 7.5 - execute the [SQL Azure [Session].sql](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/SQL Azure [Session].sql) script on the Sitecore Session database.
-   
-2. In the **SQL Server Management Studio**, in the **Object Explorer**, right-click a Sitecore database, and select **Tasks -> Export Data-tier Application...** in the context menu. The **Export data-tier Application** dialog box appears. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/SSMS-01.png)
-
-3. In the **Export data-tier Application** dialog box, click the **Next >** button to go to the **Export Settings** step. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/SSMS-02.png)
-
-4. In the **Export Settings** step, browse a location for a `*.bacpac` file to be stored in the file system. Then click the **Next >** button to go to the **Summary** step. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/SSMS-03.png)
-
-5. In the **Summary** step, click the **Finish** button to start creating a `*.bacpac` file. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/SSMS-04.png)
-
-6. In the **Results** step, click the **Close** button when the operation is complete. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/SSMS-05.png)
-
-7. Repeat steps 2-5 for each Sitecore database you want to export.
- 
-8. In the **Visual Studio**, in the **Server Explorer**, right-click the `/Azure/Storage` item, and then click the **Create Storage Account...** in the context menu. The **Create Storage Account** dialog box appears. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-SQL-01.png)
-
-9. In the **Create Storage Account** dialog box, fill in the **Subscription**, **Name**, **Region or Affinity Group** and **Replication** fields, and click the **Create** button. The **Azure Storage** service is created. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-SQL-02.png)
-
-10. In the **Server Explorer**, right click the `/Azure/Storage/<StorageAccount>/Blobs` item, and then click the **Create Blob Container...** in the context menu. The **Create Blob Container** dialog box appears.
-  
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-SQL-03.png)
-    
-11. In the **Create Blob Container** dialog box, enter a name for the new blob container and click the **OK** button. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-SQL-04.png)
-   
-12. In the **Server Explorer**, double click the created container, and then click the **Upload Blob** button. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-SQL-05.png)
-
-13. Upload the `*.bacpac` files to the container.
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/VS-SQL-06.png)
-
-14. Log in to the **Microsoft Azure Portal** using the https://portal.azure.com URL. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-01.png)
-
-15. In the **Jumpbar**, click the **New** button, then select the **Data + Storage** section and click the **SQL Database** button. The **SQL Database** blade appears. 
-
-   ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-02.png)
-
-16. In the **SQL Database** blade, click on the **Server** section. Then create a new server configuration. 
-
-  ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-03.png)
-  
-  > **Note:** Sitecore recommends using [Azure SQL Database V12](http://azure.microsoft.com/en-us/documentation/articles/sql-database-v12-whats-new/) service to get the better experience.
-
-17. In the **SQL Database** blade, fill in the **Name** field and configure the other section if needed, then click the **Create** button.
-
-  ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-04.png)
-
-18. In the **Startboard**, click on the **Empty SQL Database** tile.
-
-  ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-05.png)
-
-19. In the **Empty SQL Database** blade, click the **Delete** button.
-
-  ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-06.png)
-
-20. In the **Jumpbar**, click the **Browser** button and select the **SQL servers** from the list. The **Browser** and **SQL servers** blades appear.
-
-  ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-07.png)
-
-21. In the **SQL servers** blade, click on the SQL Server instance you created before. The **SQL Server** blade appears.
-
-  ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-08.png)
-
-22. In the **SQL Server** blade, click the **Import database** button in the top menu. The **Import Database** blade appears.
-
-  ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-09.png)
-
-23. In the **Import Database** blade, select the created storage account and container with `*.bacpac` file, then click the **OK** button.
-
-  ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-10.png)
-
-24. In the **Import Database** blade, configure the **Pricing Tier** section and fill in the **Database Name**, **Server Admin Login** and **Password** fields, then click the **Create** button.
-
-  ![](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-SQL-11.png)
-
-25. Repeat steps 22-24 for each Sitecore database you want to import.
-
-##Download Options
-
-Exported Sitecore databases as `*.bacpac` files:
-- [Sitecore75.Core.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Core.bacpac)
-- [Sitecore75.Master.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Master.bacpac)
-- [Sitecore75.Web.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Web.bacpac)
-- [Sitecore75.Reporting.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Reporting.bacpac)
-- [Sitecore75.Session.bacpac](./media/how-to-deploy-sitecore-75-solution-to-microsoft-azure-cloud-service-using-visual-studio/Sitecore75.Session.bacpac)
