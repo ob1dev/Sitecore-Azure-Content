@@ -135,13 +135,16 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    Build: Cannot compile external modules unless the '--module' flag is provided.
    ```   
     
-   - To address the error, in the **ASP.NET Web Application** project's properties, switch to the **TypeScript Build** section and set the **AMD** as the **Module system**. Otherwise, exclude both the `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts` and `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.d.ts` files from the project.
+   To address the error, in the **ASP.NET Web Application** project's properties, switch to the **TypeScript Build** section and set the **AMD** as the **Module system**. Otherwise, exclude the following files from the project:
+   - \sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts
+   - \sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.d.ts
     
    ```
    Project file must include the .NET Framework assembly 'WindowsBase, PresentationCore, PresentationFramework' in the reference list.    
    ```
     
-   - To address the error, in the **Solution Explorer** window select the `\sitecore\shell\ClientBin\EmptySplashScreen.xaml` item and set the **Build Action** to the **Content** value.
+   To address the error, in the **Solution Explorer** window set the **Build Action** to the **Content** value for the following item:
+   - \sitecore\shell\ClientBin\EmptySplashScreen.xaml 
     
 10. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
   
