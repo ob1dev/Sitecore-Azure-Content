@@ -85,7 +85,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    Build: Cannot compile external modules unless the '--module' flag is provided.	C:\inetpub\wwwroot\Sitecore75\Website\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts
    ```
    
-   - To address the error, in the **ASP.NET Web Application** project's properties, switch to the **TypeScript Build** section and set the **AMD** as the **Module system**. Otherwise, exclude both the `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts` and `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.d.ts` files from the project.  
+   To address the error, in the **ASP.NET Web Application** project's properties, switch to the **TypeScript Build** section and set the **AMD** as the **Module system**. Otherwise, exclude both the `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.ts` and `\sitecore\shell\client\Speak\Assets\lib\core\1.2\SitecoreSpeak.d.ts` files from the project.  
        
 5. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
   
@@ -93,10 +93,10 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
     Install-Package Sitecore.Azure.Setup -Version 7.5.0
     ```
    
-   > **Note:** Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\connectionStrings` element.
+   > **Important:** Modify both the `Web.Debug.config` and `Web.Release.config` files under the `\configuration\connectionStrings` element.
    > - For SQL Server connection strings, replace the `{server-name}` with the name of your Azure SQL Database service. The `{server-admin-login}` and `{password}` with SQL Server account credentials. 
    > - For MongoDB connection strings, replace the `{host}` with the URL of your Mongo service. The `{user-name}` and `{password}` with your Mongo account credentials.
-   </br>
+    
    > **Note:** For information on deploying Sitecore databases to Azure, see the section [How to deploy Sitecore databases to Azure SQL Database](how-to-deploy-sitecore-databases-to-azure-sql-database.md).
     
 6. In the **ASP.NET Web Application** project, include the `Startup.cmd` file in the the `\bin` folder.
