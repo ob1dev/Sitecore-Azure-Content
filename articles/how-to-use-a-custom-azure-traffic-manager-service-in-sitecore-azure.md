@@ -3,7 +3,7 @@
 
 The Sitecore Azure module automatically creates all Microsoft Azure services it uses during deployment, as well as generates names for them. The pattern for generating names depends on the project name and environment type from the Sitecore Azure Environment file, as well as the deployment location, deployment type, etc.
 
-One of the services used during deployment is the [Microsoft Azure Traffic Manager](https://msdn.microsoft.com/en-us/library/azure/hh745750.aspx). Microsoft Azure requires that the name of the Microsoft Azure Traffic Manger Service is unique, since it is used as a part of the public URL prefix for the `*.trafficmanager.net` host name.
+One of the services used during deployment is the [Microsoft Azure Traffic Manager](https://azure.microsoft.com/en-us/documentation/services/traffic-manager/). Microsoft Azure requires that the name of the Microsoft Azure Traffic Manger Service is unique, since it is used as a part of the public URL prefix for the `*.trafficmanager.net` host name.
 
 This article provides a list of techniques that can be used to manually create the Microsoft Azure Traffic Manager and deploy a Sitecore solution using this Traffic Manager Service when using the Sitecore Azure module.
 
