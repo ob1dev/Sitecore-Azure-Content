@@ -36,11 +36,11 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
  
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-03.png)
  
-4. In the **Startboard**, click on the **sitecore-80** Web App tile.
+4. In the **Startboard**, click on the **Web App** tile.
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-04.png)
 
-5. In the **sitecore80 Web App** blade, click the **All settings** button and select the **Application settings** section.
+5. In the **Web App** blade, click the **All settings** button and select the **Application settings** section.
  
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-05.png)
  
