@@ -35,14 +35,14 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
 
 6. In the **Manage keys** blade, copy the **Storage account name** and **Primary access key**.
 
-   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-Storage-05.png)
+   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-Storage-06.png)
 
 7. In the **SQL Server Management Studio**, update the Sitecore database schema to fit the **Azure SQL Database** service requirements:
    - For Sitecore CMS 7.2 - execute the [SQL Azure \[Core, Master, Web\].sql](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SQL Azure [Core, Master, Web].sql) script on the Sitecore Core, Master and Web databases.
    - For Sitecore DMS 7.2 - execute the [SQL Azure \[Analytics\].sql](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SQL Azure [Analytics].sql) script on the Sitecore Analytics databases.
    - For Sitecore XP 7.5 or 8.0 - execute the [SQL Azure [Session].sql](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SQL Azure [Session].sql) script on the Sitecore Session database.   
    
-8. In the **SQL Server Management Studio**, in the **Object Explorer**, right-click a Sitecore database, and select **Tasks -> Export Data-tier Application...** in the context menu. The **Export data-tier Application** dialog box appears. 
+8. In the **SQL Server Management Studio**, in the **Object Explorer** window, right-click a Sitecore database, and select **Tasks -> Export Data-tier Application...** in the context menu. The **Export data-tier Application** dialog box appears. 
 
    ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-01.png)
 
@@ -54,7 +54,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
 
    ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-03.png)
 
-11. In **Connect to Windows Azure Storage** dialog box, fill in the **Storage account** and **Access Key** fields using the copied Storage account name and Primary access key from the **Microsoft Azure Portal**, then click the **Connect** button.
+11. In **Connect to Windows Azure Storage** dialog box, fill in the **Storage account** and **Access key** fields using the copied Storage account name and Primary access key from the **Microsoft Azure Portal**, then click the **Connect** button.
 
    ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-04.png)
 
@@ -72,7 +72,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
 
 16. Repeat steps 8-14 for each Sitecore database you want to export.
 
-17. In to the **Microsoft Azure Portal**, in the **Jumpbar**, click the **New** button, then select the **Data + Storage** section and click the **SQL Database** button. The **SQL Database** blade appears. 
+17. In the **Microsoft Azure Portal**, in the **Jumpbar**, click the **New** button, then select the **Data + Storage** section and click the **SQL Database** button. The **SQL Database** blade appears. 
 
    ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-02.png)
 
