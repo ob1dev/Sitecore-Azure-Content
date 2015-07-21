@@ -117,11 +117,11 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-Redis-03.png)
 
-10. In the **Startboard**, click on the **my-website** Redis Cache tile.
+10. In the **Startboard**, click on the **Redis Cache** tile.
 
    ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-Redis-04.png)
 
-11. In the **my-website Redis Cache** blade, click the **All settings** button. The **Settings** blade appears.
+11. In the **Redis Cache** blade, click the **All settings** button. The **Settings** blade appears.
 
    ![](./media/how-to-deploy-sitecore-72-solution-to-microsoft-azure-cloud-service-using-visual-studio/AzurePortal-Redis-05.png)
    
