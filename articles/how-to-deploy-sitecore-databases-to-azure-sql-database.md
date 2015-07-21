@@ -1,107 +1,122 @@
 #How to deploy Sitecore databases to Azure SQL Database
 
+This article provides a list of techniques that can be used to deploy Sitecore databases to Microsoft Azure using Microsoft SQL Server Management Studio.
+
+**Requirements:**
+- A work or school account / Microsoft account and a Microsoft Azure subscription with the following Azure services enabled:
+  - [Azure Storage](https://msdn.microsoft.com/en-us/library/azure/gg433040.aspx)
+  - [Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx)
+- Microsoft SQL Server Management Studio 2014 
+- Sitecore CMS and DMS 7.2 or Sitecore® Experience Platform™ 7.5 or higher
+
+##Instructions
+
 The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx) service is as follows:
 
-1. Update the Sitecore database schema to fit the **Azure SQL Database** service requirements:
+1. Log in to the **Microsoft Azure Portal** using the https://portal.azure.com URL.
+
+   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-Storage-01.png)
+
+2. In the **Jumpbar**, click the **New** button, then select the **Data + Storage** section and click the **Storage** button. The **Storage account** blade appears.
+
+   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-Storage-02.png)
+
+3. In the **Storage account** blade, fill in the **Storage** field and configure the other section if needed, then click the **Create** button. 
+
+   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-Storage-03.png)
+
+4. In the **Startboard**, click on the **Storage** tile.
+
+   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-Storage-04.png)
+
+5. In the **Storage account** blade, click the **All settings** button and select the **Keys** section. The **Manage keys** blade appears.
+
+   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-Storage-05.png)
+
+6. In the **Manage keys** blade, copy the **Storage account name** and **Primary access key**.
+
+   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-Storage-05.png)
+
+7. In the **SQL Server Management Studio**, update the Sitecore database schema to fit the **Azure SQL Database** service requirements:
    - For Sitecore CMS 7.2 - execute the [SQL Azure \[Core, Master, Web\].sql](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SQL Azure [Core, Master, Web].sql) script on the Sitecore Core, Master and Web databases.
    - For Sitecore DMS 7.2 - execute the [SQL Azure \[Analytics\].sql](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SQL Azure [Analytics].sql) script on the Sitecore Analytics databases.
-   - For Sitecore XP 7.5 and 8.0 - execute the [SQL Azure [Session].sql](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SQL Azure [Session].sql) script on the Sitecore Session database.   
+   - For Sitecore XP 7.5 or 8.0 - execute the [SQL Azure [Session].sql](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SQL Azure [Session].sql) script on the Sitecore Session database.   
    
-2. In the **SQL Server Management Studio**, in the **Object Explorer**, right-click a Sitecore database, and select **Tasks -> Export Data-tier Application...** in the context menu. The **Export data-tier Application** dialog box appears. 
+8. In the **SQL Server Management Studio**, in the **Object Explorer**, right-click a Sitecore database, and select **Tasks -> Export Data-tier Application...** in the context menu. The **Export data-tier Application** dialog box appears. 
 
    ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-01.png)
 
-3. In the **Export data-tier Application** dialog box, click the **Next >** button to go to the **Export Settings** step. 
+9. In the **Export data-tier Application** dialog box, click the **Next >** button to go to the **Export Settings** step. 
 
    ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-02.png)
 
-4. In the **Export Settings** step, browse a location for a `*.bacpac` file to be stored in the file system. Then click the **Next >** button to go to the **Summary** step. 
+10. In the **Export Settings** step, select the **Save to Windows Azure** option and click the **Connect...** button. The **Connect to Windows Azure Storage** dialog box appears.
 
    ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-03.png)
 
-5. In the **Summary** step, click the **Finish** button to start creating a `*.bacpac` file. 
+11. In **Connect to Windows Azure Storage** dialog box, fill in the **Storage account** and **Access Key** fields using the copied Storage account name and Primary access key from the **Microsoft Azure Portal**, then click the **Connect** button.
 
    ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-04.png)
 
-6. In the **Results** step, click the **Close** button when the operation is complete. 
+12. In the **Export Settings** step, fill in the **Container** field and then click the **Next >** button to go to the **Summary** step. 
 
    ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-05.png)
 
-7. Repeat steps 2-5 for each Sitecore database you want to export.
- 
-8. In the **Visual Studio**, in the **Server Explorer**, right-click the `/Azure/Storage` item, and then click the **Create Storage Account...** in the context menu. The **Create Storage Account** dialog box appears. 
+13. In the **Summary** step, click the **Finish** button to start creating a `*.bacpac` file. 
 
-   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/VS-SQL-01.png)
+   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-06.png)
 
-9. In the **Create Storage Account** dialog box, fill in the **Subscription**, **Name**, **Region or Affinity Group** and **Replication** fields, and click the **Create** button. The **Azure Storage** service is created. 
+14. In the **Results** step, click the **Close** button when the operation is complete. 
 
-   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/VS-SQL-02.png)
+   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/SSMS-07.png)
 
-10. In the **Server Explorer**, right click the `/Azure/Storage/<StorageAccount>/Blobs` item, and then click the **Create Blob Container...** in the context menu. The **Create Blob Container** dialog box appears.
-  
-   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/VS-SQL-03.png)
-    
-11. In the **Create Blob Container** dialog box, enter a name for the new blob container and click the **OK** button. 
+16. Repeat steps 8-14 for each Sitecore database you want to export.
 
-   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/VS-SQL-04.png)
-   
-12. In the **Server Explorer**, double click the created container, and then click the **Upload Blob** button. 
-
-   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/VS-SQL-05.png)
-
-13. Upload the `*.bacpac` files to the container.
-
-   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/VS-SQL-06.png)
-
-14. Log in to the **Microsoft Azure Portal** using the https://portal.azure.com URL. 
-
-   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-01.png)
-
-15. In the **Jumpbar**, click the **New** button, then select the **Data + Storage** section and click the **SQL Database** button. The **SQL Database** blade appears. 
+17. In to the **Microsoft Azure Portal**, in the **Jumpbar**, click the **New** button, then select the **Data + Storage** section and click the **SQL Database** button. The **SQL Database** blade appears. 
 
    ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-02.png)
 
-16. In the **SQL Database** blade, click on the **Server** section. Then create a new server configuration. 
+18. In the **SQL Database** blade, click on the **Server** section. Then create a new server configuration. 
 
   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-03.png)
   
   > **Note:** Sitecore recommends using [Azure SQL Database V12](http://azure.microsoft.com/en-us/documentation/articles/sql-database-v12-whats-new/) service to get the better experience.
 
-17. In the **SQL Database** blade, fill in the **Name** field and configure the other section if needed, then click the **Create** button.
+19. In the **SQL Database** blade, fill in the **Name** field and configure the other section if needed, then click the **Create** button.
 
   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-04.png)
 
-18. In the **Startboard**, click on the **Empty SQL Database** tile.
+20. In the **Startboard**, click on the **SQL Database** tile.
 
   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-05.png)
 
-19. In the **Empty SQL Database** blade, click the **Delete** button in the top menu.
+21. In the **SQL Database** blade, click the **Delete** button in the top menu.
 
   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-06.png)
   
   > **Note:** The `Empty` SQL Database is created with a SQL Server instance. However, it is not needed. 
 
-20. In the **Jumpbar**, click the **Browser All** button and select the **SQL servers** from the list. The **SQL servers** blade appears.
+22. In the **Jumpbar**, click the **Browser All** button and select the **SQL servers** from the list. The **SQL servers** blade appears.
 
   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-07.png)
 
-21. In the **SQL servers** blade, click on the SQL Server instance you created before. The **SQL Server** blade appears.
+23. In the **SQL servers** blade, click on the SQL Server instance you created before. The **SQL Server** blade appears.
 
   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-08.png)
 
-22. In the **SQL Server** blade, click the **Import database** button in the top menu. The **Import Database** blade appears.
+24. In the **SQL Server** blade, click the **Import database** button in the top menu. The **Import Database** blade appears.
 
   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-09.png)
 
-23. In the **Import Database** blade, select the created storage account and container with `*.bacpac` file, then click the **OK** button.
+25. In the **Import Database** blade, select the created storage account and container with `*.bacpac` file, then click the **OK** button.
 
   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-10.png)
 
-24. In the **Import Database** blade, configure the **Pricing Tier** section and fill in the **Database Name**, **Server Admin Login** and **Password** fields, then click the **Create** button.
+26. In the **Import Database** blade, configure the **Pricing Tier** section and fill in the **Database Name**, **Server Admin Login** and **Password** fields, then click the **Create** button.
 
   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-11.png)
 
-25. Repeat steps 22-24 for each Sitecore database you want to import.
+27. Repeat steps 24-26 for each Sitecore database you want to import.
 
 ##Download Options
 
