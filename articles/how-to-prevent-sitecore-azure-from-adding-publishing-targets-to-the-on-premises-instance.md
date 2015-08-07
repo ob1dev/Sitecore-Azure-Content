@@ -20,7 +20,7 @@ The recommended approach to prevent adding a Publishing Target in Sitecore Azure
 
 1. Modify the `\App_Config\Include\Sitecore.Azure.config` file.
 
-2. Comment out the `Sitecore.Azure.Pipelines.Configuration.PublishingTarget.SaveChanges` processors in the `AddPublishingTarget` pipeline:
+2. Comment out the `Sitecore.Azure.Pipelines.Configuration.PublishingTarget.SaveChanges` processor in the `AddPublishingTarget` pipeline:
 
    ```xml
    <AddPublishingTarget>
