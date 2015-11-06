@@ -12,7 +12,7 @@ This article provides a list of techniques that can be used to deploy a Sitecore
   - [Azure Storage](https://msdn.microsoft.com/en-us/library/azure/gg433040.aspx)
   - [Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx)
 - Microsoft Visual Studio 2013
-- Microsoft Azure SDK 2.6 for .NET
+- Microsoft Azure SDK 2.6 for .NET or newer
 - Microsoft Azure Tool for Visual Studio 2013 
 - Microsoft SQL Server Management Studio 2014
 - MongoDB 2.6.1
@@ -79,11 +79,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    > - For SQL Database connection strings, replace the `{server-name}` with the name of your Azure SQL Database service. The `{server-admin-login}` and `{password}` with SQL Server account credentials. 
    > - For MongoDB connection strings, replace the `{host}` with the URL of your Mongo service. The `{user-name}` and `{password}` with your Mongo account credentials.
    
-7. In the **sitecore80 Web App** blade, click the **Get publish settings** button and save the **\*.PublishSettings** file in the file system.
- 
-   ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-08.png)
- 
-8. In the **ASP.NET Web Application** project, include the default Sitecore files, directories and subdirectories. 
+7. In the **ASP.NET Web Application** project, include the default Sitecore files, directories and subdirectories. 
 
    > **Note:** For information on creating an ASP.NET Web Application project for Sitecore, see the section [How To Create ASP.NET Web Application Project](how-to-create-aspnet-web-application-project.md).
 
@@ -131,7 +127,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    > **Important:** Visual Studio may freeze when including the entire `\sitecore\shell` directory at once because it contains a lot of files and subdirectories. Try to split all the subdirectories into portions, and then add them one by one.
 
-9. For a **Content Management** environment, Visual Studio may throw the following build errors:   
+8. For a **Content Management** environment, Visual Studio may throw the following build errors:   
        
    ```
    Build: Cannot compile external modules unless the '--module' flag is provided.
@@ -148,27 +144,27 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    To address the above error, in the **Solution Explorer** window, set the **Build Action** property to the **Content** value for the following item:
    - \sitecore\shell\ClientBin\EmptySplashScreen.xaml 
     
-10. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
+9. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
   
    ```
    Install-Package Sitecore.Azure.Setup -Version 8.0.0
    ```
    
-11. In the **ASP.NET Web Application** project, right-click the `App_Data` item. Add the `license.xml` and `webdav.lic` files using the **Add** -> **Existing Item...** command in the context menu.
+10. In the **ASP.NET Web Application** project, right-click the `App_Data` item. Add the `license.xml` and `webdav.lic` files using the **Add** -> **Existing Item...** command in the context menu.
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-02.png)
 
-12. In the **ASP.NET Web Application** project, right-click the `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
+11. In the **ASP.NET Web Application** project, right-click the `Web.Debug.config` and then `Web.Release.config` files. Use the **Preview Transform** command in the context menu to check that all transformations look correct as you expect them to be.
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-03.png)
 
    > **Note:** For more details about Web.config transformation syntax for Web Project Deployment using Visual Studio, see the MSDN website: http://msdn.microsoft.com/en-us/library/dd465326.aspx
  
-13. Right-click the **ASP.NET Web Application** project, and then click the **Publish...**  in the context menu. The **Publish Web** dialog box appears.     
+12. Right-click the **ASP.NET Web Application** project, and then click the **Publish...**  in the context menu. The **Publish Web** dialog box appears.     
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-04.png)
 
-14. In the **Publish Web** dialog box, in the **Profile** step, click the **Import** option and upload the **\*.PublishSettings** file. 
+13. In the **Publish Web** dialog box, in the **Profile** step, click the **Microsoft Azure Web Apps** option and select the Web App that is created in created in Microsoft Azure Portal. 
 
    ![](./media/how-to-deploy-sitecore-80-solution-to-microsoft-azure-web-app-using-visual-studio/VS-05.png)
 
