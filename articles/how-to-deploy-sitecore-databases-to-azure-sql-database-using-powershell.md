@@ -24,7 +24,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
 
 2. Install the Windows PowerShell [Sitecore.Azure](https://www.powershellgallery.com/packages/Sitecore.Azure/) module:
 
-   ```
+   ```PowerShell
    PS> Install-Module -Name Sitecore.Azure 
    ```
    
@@ -32,7 +32,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
    
 3. Log in to authenticate cmdlets with Azure Resource Manager:
 
-   ```
+   ```PowerShell
    PS> Login-AzureRmAccount
    ```
 
@@ -40,7 +40,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
 
    - **Example 1:** Publish the SQL Server databases `sc81initial_core`, `sc81initial_master`, `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server.
 
-      ```
+      ```PowerShell
       PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
                                       -SqlServerCredentials $credentials `
                                       -SqlServerDatabaseList @("sc81initial_core", "sc81initial_master", "sc81initial_web")
@@ -48,7 +48,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
       
    - **Example 2:** Publish the SQL Server databases `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server in the Resource Group `MyCompanyName` at the Azure data center `Australia East`.
    
-     ```
+     ```PowerShell
      PS> $credentials = Get-Credential
      
      PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
@@ -62,7 +62,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
      
    - **Example 3:** Publish the SQL Server databases `sc81initial_core` and `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server using the Azure Storage Account `mycompanyname` for BACPAC packages (.bacpac files).
    
-     ```
+     ```PowerShell
      PS> $password = ConvertTo-SecureString "12345" -AsPlainText -Force 
      PS> $credentials = New-Object System.Management.Automation.PSCredential ("sa", $password) 
      
@@ -74,7 +74,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
      
    - **Example 4:** Publish the SQL Server databases `sc81initial_core`, `sc81initial_master` and `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server with specified administrator credentials.
    
-     ```
+     ```PowerShell
      PS> $password = ConvertTo-SecureString "12345" -AsPlainText -Force 
      PS> $azureSqlServerCredentials = New-Object System.Management.Automation.PSCredential ("sa", $password) 
      
@@ -87,7 +87,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
    
    - **Example 5:** Publish the SQL Server databases `sc81initial_core`, `sc81initial_master`, `sc81initial_web` and `sc81initial_reporting` from the local SQL Server `Oleg-PC\SQLEXPRESS` to Azure SQL Database Server `sitecore-azure` in the Resource Group `MyCompanyName` at the Azure data center `Japan East` using the Azure storage Account `mycompanyname`.
    
-     ```
+     ```PowerShell
      PS> $localPassword = ConvertTo-SecureString "12345" -AsPlainText -Force 
      PS> $localSqlServerCredentials = New-Object System.Management.Automation.PSCredential ("sa", $localPassword) 
      
