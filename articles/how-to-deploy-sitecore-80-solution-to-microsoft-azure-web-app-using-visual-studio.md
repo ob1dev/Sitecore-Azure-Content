@@ -146,7 +146,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
     
 9. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
   
-   ```
+   ```PowerShell
    Install-Package Sitecore.Azure.Setup -Version 8.0.1
    ```
    
