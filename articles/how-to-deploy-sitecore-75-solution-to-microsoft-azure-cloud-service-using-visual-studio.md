@@ -32,7 +32,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    
 2. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
 
-    ```
+    ```PowerShell
     Update-Package Newtonsoft.Json -Version 6.0.3
     ```
    
@@ -91,7 +91,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
        
 5. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
   
-    ```
+    ```PowerShell
     Install-Package Sitecore.Azure.Setup -Version 7.5.0
     ```
    
@@ -125,7 +125,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
 9. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
 
-   ```xml
+   ```PowerShell
    Install-Package Sitecore.Azure.Diagnostics -Version 7.5.0
    ```
 
