@@ -74,7 +74,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
 3. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
   
-    ```
+    ```PowerShell
     Install-Package Sitecore.Azure.Setup -Version 7.2.0
     ```
    
@@ -139,7 +139,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
 15. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
     
-   ```
+   ```PowerShell
    Install-Package Microsoft.Web.RedisSessionStateProvider
    ```
     
@@ -175,7 +175,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
 18. In the **Visual Studio**, click **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:
 
-   ```xml
+   ```PowerShell
    Install-Package Sitecore.Azure.Diagnostics -Version 7.2.1
    ```
 
