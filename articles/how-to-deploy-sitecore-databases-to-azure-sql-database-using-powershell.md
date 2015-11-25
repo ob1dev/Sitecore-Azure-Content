@@ -20,7 +20,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
 
 1. Run either the Windows PowerShell ISE or Microsoft Azure PowerShell.
 
-   > **Note:** You must run as an Administrator very first time to install a module.
+   > **Note:** You must run as an Administrator the very first time to install a module.
 
 2. Install the Windows PowerShell [Sitecore.Azure](https://www.powershellgallery.com/packages/Sitecore.Azure/) module:
 
@@ -38,68 +38,70 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
 
 4. Now you can use the `Publish-SitecoreSqlDatabase` cmdlet to publish one or more Sitecore SQL Server databases. 
 
-   - **Example 1:** Publish the SQL Server databases `sc81initial_core`, `sc81initial_master`, `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server.
+##Examples
+   
+- **Example 1:** Publish the SQL Server databases `sc81initial_core`, `sc81initial_master`, `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server.
 
-      ```PowerShell
-      PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
-                                      -SqlServerCredentials $credentials `
-                                      -SqlServerDatabaseList @("sc81initial_core", "sc81initial_master", "sc81initial_web")
-      ```
+  ```PowerShell
+  PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
+                                  -SqlServerCredentials $credentials `
+                                  -SqlServerDatabaseList @("sc81initial_core", "sc81initial_master", "sc81initial_web")
+  ```
       
-   - **Example 2:** Publish the SQL Server databases `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server in the Resource Group `MyCompanyName` at the Azure data center `Australia East`.
+- **Example 2:** Publish the SQL Server databases `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server in the Resource Group `MyCompanyName` at the Azure data center `Australia East`.
    
-     ```PowerShell
-     PS> $credentials = Get-Credential
+  ```PowerShell
+  PS> $credentials = Get-Credential
      
-     PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
-                                     -SqlServerCredentials $credentials ` 
-                                     -SqlServerDatabaseList @("sc81initial_web") `
-                                     -AzureResourceGroupName "MyCompanyName" `
-                                     -AzureResourceGroupLocation "Australia East"
-     ```
+  PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
+                                  -SqlServerCredentials $credentials ` 
+                                  -SqlServerDatabaseList @("sc81initial_web") `
+                                  -AzureResourceGroupName "MyCompanyName" `
+                                  -AzureResourceGroupLocation "Australia East"
+  ```
      
-     > **Important:** The Australia Regions are available to customers with a business presence in Australia or New Zealand.
+  > **Important:** The Australia Regions are available to customers with a business presence in Australia or New Zealand.
      
-   - **Example 3:** Publish the SQL Server databases `sc81initial_core` and `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server using the Azure Storage Account `mycompanyname` for BACPAC packages (.bacpac files).
+- **Example 3:** Publish the SQL Server databases `sc81initial_core` and `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server using the Azure Storage Account `mycompanyname` for BACPAC packages (.bacpac files).
    
-     ```PowerShell
-     PS> $password = ConvertTo-SecureString "12345" -AsPlainText -Force 
-     PS> $credentials = New-Object System.Management.Automation.PSCredential ("sa", $password) 
+  ```PowerShell
+  PS> $password = ConvertTo-SecureString "12345" -AsPlainText -Force 
+  PS> $credentials = New-Object System.Management.Automation.PSCredential ("sa", $password) 
      
-     PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
-                                     -SqlServerCredentials $credentials `
-                                     -SqlServerDatabaseList @("sc81initial_core", "sc81initial_web") `
-                                     -AzureStorageAccountName "mycompanyname"
-     ```
+  PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
+                                  -SqlServerCredentials $credentials `
+                                  -SqlServerDatabaseList @("sc81initial_core", "sc81initial_web") `
+                                  -AzureStorageAccountName "mycompanyname"
+  ```
      
-   - **Example 4:** Publish the SQL Server databases `sc81initial_core`, `sc81initial_master` and `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server with specified administrator credentials.
+- **Example 4:** Publish the SQL Server databases `sc81initial_core`, `sc81initial_master` and `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server with specified administrator credentials.
    
-     ```PowerShell
-     PS> $password = ConvertTo-SecureString "12345" -AsPlainText -Force 
-     PS> $azureSqlServerCredentials = New-Object System.Management.Automation.PSCredential ("sa", $password) 
+  ```PowerShell
+  PS> $password = ConvertTo-SecureString "12345" -AsPlainText -Force 
+  PS> $azureSqlServerCredentials = New-Object System.Management.Automation.PSCredential ("sa", $password) 
      
-     PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
-                                     -SqlServerCredentials $localSqlServerCredentials `
-                                     -SqlServerDatabaseList @("sc81initial_core", "sc81initial_master", "sc81initial_web") `
-                                     -AzureSqlServerName "sitecore-azure" `
-                                     -AzureSqlServerCredentials $azureSqlServerCredentials
-     ```
+  PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
+                                  -SqlServerCredentials $localSqlServerCredentials `
+                                  -SqlServerDatabaseList @("sc81initial_core", "sc81initial_master", "sc81initial_web") `
+                                  -AzureSqlServerName "sitecore-azure" `
+                                  -AzureSqlServerCredentials $azureSqlServerCredentials
+  ```
    
-   - **Example 5:** Publish the SQL Server databases `sc81initial_core`, `sc81initial_master`, `sc81initial_web` and `sc81initial_reporting` from the local SQL Server `Oleg-PC\SQLEXPRESS` to Azure SQL Database Server `sitecore-azure` in the Resource Group `MyCompanyName` at the Azure data center `Japan East` using the Azure storage Account `mycompanyname`.
+- **Example 5:** Publish the SQL Server databases `sc81initial_core`, `sc81initial_master`, `sc81initial_web` and `sc81initial_reporting` from the local SQL Server `Oleg-PC\SQLEXPRESS` to Azure SQL Database Server `sitecore-azure` in the Resource Group `MyCompanyName` at the Azure data center `Japan East` using the Azure storage Account `mycompanyname`.
    
-     ```PowerShell
-     PS> $localPassword = ConvertTo-SecureString "12345" -AsPlainText -Force 
-     PS> $localSqlServerCredentials = New-Object System.Management.Automation.PSCredential ("sa", $localPassword) 
+  ```PowerShell
+  PS> $localPassword = ConvertTo-SecureString "12345" -AsPlainText -Force 
+  PS> $localSqlServerCredentials = New-Object System.Management.Automation.PSCredential ("sa", $localPassword) 
      
-     PS> $azurePassword = ConvertTo-SecureString "Experienc3!" -AsPlainText -Force 
-     PS> $azureSqlServerCredentials = New-Object System.Management.Automation.PSCredential ("sitecore", $azurePassword)
+  PS> $azurePassword = ConvertTo-SecureString "Experienc3!" -AsPlainText -Force 
+  PS> $azureSqlServerCredentials = New-Object System.Management.Automation.PSCredential ("sitecore", $azurePassword)
      
-     PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
-                                     -SqlServerCredentials $localSqlServerCredentials `
-                                     -SqlServerDatabaseList @("sc81initial_core", "sc81initial_master", "sc81initial_web", "sc81initial_reporting") `
-                                     -AzureResourceGroupName "MyCompanyName" `
-                                     -AzureResourceGroupLocation "Japan East" `
-                                     -AzureStorageAccountName "mycompanyname" `
-                                     -AzureSqlServerName "sitecore-azure" `
-                                     -AzureSqlServerCredentials $azureSqlServerCredentials 
-     ```
+  PS> Publish-SitecoreSqlDatabase -SqlServerName "Oleg-PC\SQLEXPRESS" `
+                                  -SqlServerCredentials $localSqlServerCredentials `
+                                  -SqlServerDatabaseList @("sc81initial_core", "sc81initial_master", "sc81initial_web", "sc81initial_reporting") `
+                                  -AzureResourceGroupName "MyCompanyName" `
+                                  -AzureResourceGroupLocation "Japan East" `
+                                  -AzureStorageAccountName "mycompanyname" `
+                                  -AzureSqlServerName "sitecore-azure" `
+                                  -AzureSqlServerCredentials $azureSqlServerCredentials 
+  ```
