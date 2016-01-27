@@ -141,3 +141,10 @@ Exported Sitecore databases as `*.bacpac` files:
   + [Sitecore80.Web.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore80.Web.bacpac)
   + [Sitecore80.Reporting.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore80.Reporting.bacpac)
   + [Sitecore80.Session.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore80.Session.bacpac)
+  
+- Sitecore XP 8.1 Update-1:
+  + [Sitecore81.Core.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore81.Core.bacpac)
+  + [Sitecore81.Master.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore81.Master.bacpac)
+  + [Sitecore81.Web.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore81.Web.bacpac)
+  + [Sitecore81.Reporting.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore81.Reporting.bacpac)
+  + [Sitecore81.Session.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore81.Session.bacpac)
