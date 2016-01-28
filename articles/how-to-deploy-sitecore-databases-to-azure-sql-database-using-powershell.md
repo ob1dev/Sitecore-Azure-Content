@@ -9,7 +9,7 @@ This article provides a list of techniques that can be used to deploy Sitecore d
   - Azure SQL Database
   - Azure SQL Database Server
 - Windows PowerShell ISE or Microsoft Azure PowerShell (available on [PowerShell Gallery](https://www.powershellgallery.com/profiles/azure-sdk/) and [WebPI](http://aka.ms/webpi-azps/)).
-- Microsoft SQL Server 2014 or higher
+- Microsoft SQL Server 2014 Service Pack 1 or higher
 - Sitecore® Experience Platform™ 8.0 or higher
 
 > **Note:** For basic instructions about using Windows PowerShell, see [Using Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkId=321939).

@@ -6,7 +6,7 @@ This article provides a list of techniques that can be used to deploy Sitecore d
 - A work or school account / Microsoft account and a Microsoft Azure subscription with the following Azure services enabled:
   - [Azure Storage](https://msdn.microsoft.com/en-us/library/azure/gg433040.aspx)
   - [Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx)
-- Microsoft SQL Server Management Studio 2014 
+- Microsoft SQL Server Management Studio 2014 Service Pack 1 or higher
 - Sitecore CMS and DMS 7.2 or Sitecore® Experience Platform™ 7.5 or higher
 
 ##Instructions
@@ -80,7 +80,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
 
   ![](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/AzurePortal-SQL-03.png)
   
-  > **Note:** Sitecore recommends using [Azure SQL Database V12](http://azure.microsoft.com/en-us/documentation/articles/sql-database-v12-whats-new/) service to get the better experience.
+  > **Note:** Sitecore recommends using [Azure SQL Database server V12](http://azure.microsoft.com/en-us/documentation/articles/sql-database-v12-whats-new/) to get the better experience. You must use SQL Server Management Studio 2014 Service Pack 1 or higher, which brings support for Azure SQL Database V12. 
 
 19. In the **SQL Database** blade, fill in the **Name** field and configure the other section if needed, then click the **Create** button.
 
@@ -141,3 +141,10 @@ Exported Sitecore databases as `*.bacpac` files:
   + [Sitecore80.Web.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore80.Web.bacpac)
   + [Sitecore80.Reporting.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore80.Reporting.bacpac)
   + [Sitecore80.Session.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore80.Session.bacpac)
+  
+- Sitecore XP 8.1 Update-1:
+  + [Sitecore81.Core.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore81.Core.bacpac)
+  + [Sitecore81.Master.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore81.Master.bacpac)
+  + [Sitecore81.Web.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore81.Web.bacpac)
+  + [Sitecore81.Reporting.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore81.Reporting.bacpac)
+  + [Sitecore81.Session.bacpac](./media/how-to-deploy-sitecore-databases-to-azure-sql-database/Sitecore81.Session.bacpac)
