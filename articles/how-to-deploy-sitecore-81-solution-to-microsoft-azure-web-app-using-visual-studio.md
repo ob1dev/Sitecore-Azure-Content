@@ -14,9 +14,8 @@ This article provides a list of techniques that can be used to deploy a Sitecore
   - [Azure Storage](https://msdn.microsoft.com/en-us/library/azure/gg433040.aspx)
   - [Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx)
 - Microsoft Visual Studio 2015
-- Microsoft Azure SDK 2.7.1 for .NET or newer 
+- Microsoft Azure SDK 2.8.2 for .NET or newer 
 - Microsoft SQL Server Management Studio 2014 or newer
-- MongoDB 2.6.1
 - Sitecore® Experience Platform™ 8.1 rev. 151207 (8.1 Update-1) or higher
 
 > **Note:** To download the latest version of the Microsoft Azure SDK and Tool for Visual Studio, follow this link: http://azure.microsoft.com/en-us/downloads/
@@ -56,9 +55,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-06.png)
    
    - In the **Connection strings** group:
-     + Add the `core`, `master`, `web` and `reporting` SQL Database connection strings.
-   > **Note:** `session` database isn't used as it is necessary for scaled deployments only.
-     + Add the `analytics`, `tracking.live`, `tracking.history` and `tracking.contact` MongoDB connection strings.   
+     + Add the `core`, `master` and `web` SQL Database connection strings. 
 
    ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/AzurePortal-WebApp-07.png)
   
@@ -67,18 +64,10 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    ```xml
    Server=tcp:{server-name}.database.windows.net,1433;Database=Sitecore.Core;User ID={server-admin-login}@{server-name};Password={password};Trusted_Connection=False;Encrypt=True
    Server=tcp:{server-name}.database.windows.net,1433;Database=Sitecore.Master;User ID={server-admin-login}@{server-name};Password={password};Trusted_Connection=False;Encrypt=True
-   Server=tcp:{server-name}.database.windows.net,1433;Database=Sitecore.Web;User ID={server-admin-login}@{server-name};Password={password};Trusted_Connection=False;Encrypt=True
-   Server=tcp:{server-name}.database.windows.net,1433;Database=Sitecore.Reporting;User ID={server-admin-login}@{server-name};Password={password};Trusted_Connection=False;Encrypt=True
-   
-   mongodb://{user-name}:{password}@{host}/sitecore_analytics
-   mongodb://{user-name}:{password}@{host}/sitecore_tracking_lives
-   mongodb://{user-name}:{password}@{host}/sitecore_tracking_historys
-   mongodb://{user-name}:{password}@{host}/sitecore_tracking_contact 
+   Server=tcp:{server-name}.database.windows.net,1433;Database=Sitecore.Web;User ID={server-admin-login}@{server-name};Password={password};Trusted_Connection=False;Encrypt=True   
    ```
    
-   > **Note:** Use the above templates as an example of default Sitecore connection strings:
-   > - For SQL Database connection strings, replace the `{server-name}` with the name of your Azure SQL Database service. The `{server-admin-login}` and `{password}` with SQL Server account credentials. 
-   > - For MongoDB connection strings, replace the `{host}` with the URL of your Mongo service. The `{user-name}` and `{password}` with your Mongo account credentials.
+   > **Note:** Use the above templates as an example of default Sitecore connection strings. Replace the `{server-name}` with the name of your Azure SQL Database server. The `{server-admin-login}` and `{password}` with SQL Server account credentials.
    
 7. In the **ASP.NET Web Application** project, include the default Sitecore files, directories and subdirectories. 
 
@@ -138,7 +127,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    - \sitecore\shell\client\Speak\Assets\lib\core\2.0\SitecoreSpeak.ts
    - \sitecore\shell\client\Speak\Assets\lib\core\2.0\SitecoreSpeak.d.ts
     
-    ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/VS-01.1.png)
+    ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/VS-02.png)
     
    ```
    Project file must include the .NET Framework assembly 'WindowsBase, PresentationCore, PresentationFramework' in the reference list.    
@@ -155,7 +144,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    
 10. In the **ASP.NET Web Application** project, right-click the `App_Data` item. Add the `license.xml` and `webdav.lic` files using the **Add** -> **Existing Item...** command in the context menu.
 
-   ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/VS-02.png)
+   ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/VS-03.png)
  
 11. Right-click the **ASP.NET Web Application** project, and then click the **Publish...**  in the context menu. The **Publish Web** dialog box appears.     
 
