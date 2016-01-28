@@ -13,12 +13,11 @@ This article provides a list of techniques that can be used to deploy a Sitecore
   - [Azure Web App](https://msdn.microsoft.com/en-us/library/azure/dn948515.aspx)
   - [Azure Storage](https://msdn.microsoft.com/en-us/library/azure/gg433040.aspx)
   - [Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx)
-- Microsoft Visual Studio 2013
-- Microsoft Azure SDK 2.6 for .NET or newer
-- Microsoft Azure Tool for Visual Studio 2013 
-- Microsoft SQL Server Management Studio 2014
+- Microsoft Visual Studio 2013 / 2015
+- Microsoft Azure SDK 2.8.2 for .NET or newer
+- Microsoft SQL Server Management Studio 2014 or newer
 - MongoDB 2.6.1
-- Sitecore® Experience Platform™ 8.0 rev. 150621 (8.0 Update-4) or higher
+- Sitecore® Experience Platform™ 8.0 rev. 160115 (8.0 Update-7) or higher
 
 > **Note:** To download the latest version of the Microsoft Azure SDK and Tool for Visual Studio, follow this link: http://azure.microsoft.com/en-us/downloads/
 
