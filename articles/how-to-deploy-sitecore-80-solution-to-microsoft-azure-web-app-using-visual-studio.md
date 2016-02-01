@@ -1,6 +1,6 @@
 #How to deploy Sitecore 8.0 solution to Microsoft Azure Web App using Visual Studio
 
-> **NB:** Deploying Sitecore application into Azure Web Apps currently works for non-scaled enviroment only due to persistence of certain types of data by Sitecore application into the file system. When scaled, Web Apps share file system but Sitecore instances don't support that. 
+> **NB:** On Azure Web Apps, Sitecore does not support scaling out App Service Plan due to shared `WWWROOT` directory between instances. Sitecore application has certain types of data that requires persistence in the file system.
 
 After developing a Sitecore solution in Visual Studio, it is possible to manually publish this solution to the Microsoft Azure Cloud Platform.
 
