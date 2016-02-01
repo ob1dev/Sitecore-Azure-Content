@@ -146,12 +146,17 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/VS-03.png)
  
-11. Right-click the **ASP.NET Web Application** project, and then click the **Publish...**  in the context menu. The **Publish Web** dialog box appears.     
+11. Enable or disable the Experience Database (xDB) to activate or deactivate the experience marketing and analytics features.
+
+    - To run Sitecore Experience Platform in the **CMS-Only Mode**, disable xDB as described at Sitecore Documentation webstie: https://doc.sitecore.net/sitecore_experience_platform/xdb_configuration/cmsonly_mode_configuration
+    - To run Sitecore Experience Platform in the **Full Mode**, enabled xDB Cloud as described at Sitecore Documentation webstie: https://doc.sitecore.net/cloud/xdb_cloud/configure_a_sitecore_xdb_cloud_connection
+
+12. Right-click the **ASP.NET Web Application** project, and then click the **Publish...**  in the context menu. The **Publish Web** dialog box appears.     
 
    ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/VS-04.png)
 
-12. In the **Publish Web** dialog box, click the **Microsoft Azure Web App Service** option and select the Web App that was created on previous steps. 
+13. In the **Publish Web** dialog box, click the **Microsoft Azure Web App Service** option and select the Web App that was created on previous steps. 
 
    ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/VS-05.png)
 
-   > **Note:** For the basic information about the Publish Web Wizard, see the MSDN website: https://msdn.microsoft.com/en-us/library/dd465337(v=vs.110).aspx 
+   > **Note:** For the basic information about the Publish Web Wizard, see the MSDN website: https://msdn.microsoft.com/en-us/library/dd465337(v=vs.110).aspx
