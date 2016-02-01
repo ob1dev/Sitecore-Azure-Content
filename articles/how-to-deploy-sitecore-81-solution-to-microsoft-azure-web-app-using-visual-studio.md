@@ -150,7 +150,7 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
 
    ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/VS-04.png)
 
-12. In the **Publish Web** dialog box, in the **Profile** step, click the **Microsoft Azure Web Apps** option and select the Web App that is created in created in Microsoft Azure Portal. 
+12. In the **Publish Web** dialog box, click the **Microsoft Azure Web App Service** option and select the Web App that was created on previous steps. 
 
    ![](./media/how-to-deploy-sitecore-81-solution-to-microsoft-azure-web-app-using-visual-studio/VS-05.png)
 
