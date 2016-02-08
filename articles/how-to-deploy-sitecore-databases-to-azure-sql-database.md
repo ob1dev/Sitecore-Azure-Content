@@ -9,6 +9,8 @@ This article provides a list of techniques that can be used to deploy Sitecore d
 - Microsoft SQL Server Management Studio 2014 Service Pack 1 or higher
 - Sitecore CMS and DMS 7.2 or Sitecore® Experience Platform™ 7.5 or higher
 
+> **Note:** See also [How to deploy Sitecore databases to Azure SQL Database using PowerShell](https://github.com/olegburov/Sitecore-Azure-Content/blob/master/articles/how-to-deploy-sitecore-databases-to-azure-sql-database-using-powershell.md).
+
 ##Instructions
 
 The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx) service is as follows:
