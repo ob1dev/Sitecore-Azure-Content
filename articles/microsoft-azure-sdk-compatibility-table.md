@@ -49,7 +49,11 @@ This table presents Sitecore Azure module compatibility with different versions 
 | Sitecore Azure 3.1 | -             | -             | -             | ✓             | -             | -              | -              | -               |
 | Sitecore Azure 7.2 | -             | -             | -             | -             | ✓             | -              | -              | -               |
 | Sitecore Azure 7.5 | -             | -             | -             | -             | -             | ✓              | -              | -               |
-| Sitecore Azure 8.0 | -             | -             | -             | -             | -             | -              | ✓              | -               |
+| Sitecore Azure 8.0 | -             | -             | -             | -             | -             | -              | ✓              | ✓ [1]           |
 | Sitecore Azure 8.1 | -             | -             | -             | -             | -             | -              | -              | ✓               |
 
 > **Legend:** “-” – not supported; “✓” – supported.
+
+##Notes
+
++ [1] Sitecore Azure 8.0 rev. 150522 Hotfix 68545-1 must be installed. See [here](https://dev.sitecore.net/Downloads/Sitecore_Azure/80/Sitecore_Azure_80_Update1) for more details.
