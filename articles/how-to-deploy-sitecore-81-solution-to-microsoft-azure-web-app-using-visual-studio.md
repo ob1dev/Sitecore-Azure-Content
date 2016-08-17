@@ -136,10 +136,11 @@ The recommended approach to deploy a Sitecore solution to Microsoft Azure using 
    To address the above error, in the **Solution Explorer** window, set the **Build Action** property to the **Content** value for the following item:
    - \sitecore\shell\ClientBin\EmptySplashScreen.xaml 
     
-9. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following command in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
+9. In the **Visual Studio**, click the **Tools** -> **NuGet Package Manager** -> **Packages Manager Console**. Run the following commands in the **Package Manager Console** window against the **ASP.NET Web Application** project:     
   
    ```PowerShell
    Install-Package Sitecore.Azure.Setup -Version 8.1.0
+   Install-Package Sitecore.Azure.Diagnostics -Version 8.1.0
    ```
    
 10. In the **ASP.NET Web Application** project, right-click the `App_Data` item. Add the `license.xml` and `webdav.lic` files using the **Add** -> **Existing Item...** command in the context menu.
