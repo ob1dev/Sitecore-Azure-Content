@@ -41,19 +41,21 @@ Each version of the Sitecore Azure module is built for a particular Microsoft Az
 
 This table presents Sitecore Azure module compatibility with different versions of Microsoft Azure SDK:
 
-|                    | Azure SDK 1.6 | Azure SDK 1.7 | Azure SDK 1.8 | Azure SDK 2.0 | Azure SDK 2.2 | Azure SDK 2.4 | Azure SDK 2.5.1 | Azure SDK 2.7.1 |
-| ------------------ | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-------------: | :-------------: |
-| Sitecore Azure 1.1 | ✓             | -             | -             | -             | -             | -              | -              | -               | 
-| Sitecore Azure 2.0 | -             | ✓             | -             | -             | -             | -              | -              | -               |
-| Sitecore Azure 3.0 | -             | -             | ✓             | -             | -             | -              | -              | -               |
-| Sitecore Azure 3.1 | -             | -             | -             | ✓             | -             | -              | -              | -               |
-| Sitecore Azure 7.2 | -             | -             | -             | -             | ✓             | -              | -              | -               |
-| Sitecore Azure 7.5 | -             | -             | -             | -             | -             | ✓              | -              | -               |
-| Sitecore Azure 8.0 | -             | -             | -             | -             | -             | -              | ✓              | ✓ [1]           |
-| Sitecore Azure 8.1 | -             | -             | -             | -             | -             | -              | -              | ✓               |
+|                    | Azure SDK 1.6 | Azure SDK 1.7 | Azure SDK 1.8 | Azure SDK 2.0 | Azure SDK 2.2 | Azure SDK 2.4 | Azure SDK 2.5.1 | Azure SDK 2.7.1 | Azure SDK 2.9.1 |
+| ------------------ | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-------------: | :-------------: | :-------------: |
+| Sitecore Azure 1.1 | ✓             | -             | -             | -             | -             | -              | -              | -               | -               |
+| Sitecore Azure 2.0 | -             | ✓             | -             | -             | -             | -              | -              | -               | -               |
+| Sitecore Azure 3.0 | -             | -             | ✓             | -             | -             | -              | -              | -               | -               |
+| Sitecore Azure 3.1 | -             | -             | -             | ✓             | -             | -              | -              | -               | -               |
+| Sitecore Azure 7.2 | -             | -             | -             | -             | ✓             | -              | -              | -               | -               |
+| Sitecore Azure 7.5 | -             | -             | -             | -             | -             | ✓              | -              | -               | -               |
+| Sitecore Azure 8.0 | -             | -             | -             | -             | -             | -              | ✓              | ✓ [1]           | ✓ [2]          |
+| Sitecore Azure 8.1 | -             | -             | -             | -             | -             | -              | -              | ✓               | ✓ [3]           |
 
 > **Legend:** “-” – not supported; “✓” – supported.
 
 ##Notes
 
-+ [1] Sitecore Azure 8.0 rev. 150522 Hotfix 68545-1 must be installed. See [here](https://dev.sitecore.net/Downloads/Sitecore_Azure/80/Sitecore_Azure_80_Update1) for more details.
++ [1] Sitecore Azure 8.0 rev. 150522 Hotfix 68545-1 (8.0 Update-1) must be installed. See [here](https://dev.sitecore.net/Downloads/Sitecore_Azure/80/Sitecore_Azure_80_Update1) for more details.
++ [2] Sitecore Azure 8.0 rev. 161110 (8.0 Update-2) must be installed. See [here](https://dev.sitecore.net/Downloads/Sitecore_Azure/80/Sitecore_Azure_80_Update2.aspx) for more details.
++ [3] Sitecore Azure 8.1 rev. 161109 (8.1 Update-2) must be installed. See [here](https://dev.sitecore.net/Downloads/Sitecore_Azure/Sitecore_Azure_81/Sitecore_Azure_81_Update2.aspx) for more details. 
