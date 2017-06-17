@@ -1,4 +1,4 @@
-#How to deploy Sitecore databases to Azure SQL Database using PowerShell
+# How to deploy Sitecore databases to Azure SQL Database using PowerShell
 
 This article provides a list of techniques that can be used to deploy Sitecore databases to Microsoft Azure using Azure PowerShell.
 
