@@ -14,7 +14,7 @@ This article provides a list of techniques that can be used to deploy Sitecore d
 
 > **Note:** For basic instructions about using Windows PowerShell, see [Using Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkId=321939).
 
-##Instructions
+## Instructions
 
 The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQL Database](https://azure.microsoft.com/en-us/documentation/articles/sql-database-technical-overview/) service is as follows:
 
@@ -46,7 +46,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
 
 5. Now you can use the `Publish-SitecoreSqlDatabase` cmdlet to publish one or more Sitecore SQL Server databases. 
 
-##Examples
+## Examples
    
 - **Example 1:** Publish the SQL Server databases `sc81initial_core`, `sc81initial_master`, `sc81initial_web` from the local SQL Server `Oleg-PC\SQLEXPRESS` to an Azure SQL Database Server.
 
