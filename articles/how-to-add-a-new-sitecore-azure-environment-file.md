@@ -1,4 +1,4 @@
-#How to add a new Sitecore Azure environment file
+# How to add a new Sitecore Azure environment file
 
 Sitecore Azure may sometimes show the following error after adding a new environment file from the Sitecore Azure application that has the same name as a previously added environment file. This may also prevent further deployment operations from running.
 
@@ -47,7 +47,7 @@ Source: System.Xml
   at Microsoft.Xml.Serialization.GeneratedAssembly.XmlSerializationReaderEnvironmentDataStorage.Read3_EnvironmentDataStorage()
 ```
 
-##Solution
+## Solution
 
 The recommended approach to add a new Sitecore Azure environment file is as follows:
 
