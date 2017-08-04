@@ -1,10 +1,10 @@
-#How to add a custom database in Sitecore Azure
+# How to add a custom database in Sitecore Azure
 
 The Sitecore Azure module automatically creates the [Microsoft Azure SQL Databases Service](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx) and deploys the default Sitecore Core, Master and Web databases during deployment.
 
 This article provides a list of techniques that can be used to manually add a custom database to a new deployment using the Sitecore Azure module.
 
-##Solution
+## Solution
 
 The recommended approach to add a custom database in Sitecore Azure is as follows:
 
