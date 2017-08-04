@@ -1,8 +1,8 @@
-#How to Create ASP.NET Web Application Project
+# How to create ASP.NET Web Application project
 
 Sitecore supports the Visual Studio ASP.NET project model for Sitecore solutions using both the ASP.NET Web Forms and ASP.NET MVC applications. 
 
-##Solution
+## Solution
 
 The recommended approach to create an ASP.NET project in Visual Studio for Sitecore solution is as follows:
 
@@ -67,7 +67,7 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
    - \Global.asax
    - \Globalasax.cs
    - \packages.config
-   - \Sitecore.csproj
+   - \Sitecore.cspro
    - \Sitecore.csproj.user
    - \Web.Debug.config
    - \Web.Release.config
@@ -146,7 +146,7 @@ The recommended approach to create an ASP.NET project in Visual Studio for Sitec
    
    > **Note:** The default ASP.NET MVC route is not valid for using with Sitecore MVC. See the `Mvc.IllegalRoutes` setting in the `\App_Config\Include\Sitecore.Mvc.config` file for more details.
    
-##Download Options
+## Download Options
 
 Empty ASP.NET Web Application Projects:
 - [Sitecore ASP.NET MVC.zip](./media/how-to-create-aspnet-web-application-project/Sitecore ASP.NET MVC.zip)
