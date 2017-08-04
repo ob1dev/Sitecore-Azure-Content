@@ -1,4 +1,4 @@
-#Error installing a management certificate for Sitecore Azure without the appropriate application pool permissions
+# Error installing a management certificate for Sitecore Azure without the appropriate application pool permissions
 
 The Sitecore Azure module is based on the Microsoft Azure [Service Management REST API](https://msdn.microsoft.com/en-us/library/azure/ee460799.aspx). All API operations are performed over SSL and are mutually authenticated using the X.509 v4 certificate. Therefore, a management certificate must be uploaded to the module.
 
@@ -10,7 +10,7 @@ The Sitecore Azure module provides two ways for uploading certificates:
 
 ![](./media/error-installing-a-management-certificate-for-sitecore-azure-without-the-appropriate-application-pool-permissions/SitecoreAzure-01.png)
 
-##Problem
+## Problem
 
 Sitecore Azure may sometimes throw the following error after clicking the **Upload** button. This may happen when the **ApplicationPoolIdentity** is used for running Sitecore’s Application Pool and Option A is used for uploading a `*.publishsettings` file.
 
@@ -28,7 +28,7 @@ Source: mscorlib
   at Sitecore.Azure.UI.Shell.Applications.Azure.AzureControls.Dialogs.UploadCertificateBase.TryInstallCertificate(String certificateString, String password, Exception& exception, X509Certificate2& certificate)
 ```
 
-##Solution
+## Solution
 
 Perform the following steps to solve the issue with uploading the Azure Publishing Settings file:
 
