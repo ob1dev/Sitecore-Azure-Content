@@ -1,10 +1,10 @@
-#How to add a custom connection string in Sitecore Azure
+# How to add a custom connection string in Sitecore Azure
 
 The Sitecore Azure module modifies the `connectionStrings` element in the `Web.config` file during the deployment to the [Microsoft Azure SQL Databases Service](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx) databases.
 
 This article provides a list of techniques that can be used to manually add a custom connection string to a new or existing Azure deployment.
 
-##Solution
+## Solution
 
 The recommended approach to adding a custom connection string in Sitecore Azure is as follows:
 
