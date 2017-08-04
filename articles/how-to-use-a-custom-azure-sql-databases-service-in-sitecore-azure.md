@@ -1,4 +1,4 @@
-#How to use a custom Azure SQL Databases Service in Sitecore Azure
+# How to use a custom Azure SQL Databases Service in Sitecore Azure
 
 The Sitecore Azure module automatically creates all Microsoft Azure services it uses during deployment, as well as generates names for them. The pattern for generating names depends on the project name and environment type from the Sitecore Azure Environment file, as well as the deployment location, deployment type, etc.
 
@@ -6,7 +6,7 @@ One of the services used during deployment is the [Microsoft Azure SQL Databases
 
 This article provides a list of techniques that can be used to manually create the Microsoft Azure SQL Databases Service and deploy a Sitecore solution using this SQL Databases Service when using the Sitecore Azure module.
 
-##Solution
+## Solution
 
 The recommended approach to use a custom Azure SQL Databases Service in Sitecore Azure is as follows:
 
