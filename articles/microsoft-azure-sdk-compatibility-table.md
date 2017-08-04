@@ -1,4 +1,4 @@
-#Microsoft Azure SDK Compatibility Table
+# Microsoft Azure SDK Compatibility Table
 
 If a wrong version of [Microsoft Azure SDK for .NET](http://azure.microsoft.com/en-us/downloads/archive-net-downloads/) is installed, the following error will be shown while deploying a Sitecore solution using the Sitecore Azure module. This happens even if the installed Microsoft Azure SDK version is newer than the one that the Sitecore Azure module requires.
 
@@ -29,7 +29,7 @@ Message: Can't find sdk path Source: Microsoft.ServiceHosting.Tools.MSBuildTasks
   at Sitecore.Azure.Managers.Pipelines.BasePipeline.RolePipelineProcessor.Process(RolePipelineArgsBase args)
 ```
 
-##Solution
+## Solution
 
 The Sitecore Azure module requires Microsoft Azure SDK to be installed on the same machine where the Sitecore CMS instance is hosted. Microsoft Azure SDK for .NET supports side-by-side installation starting from version 1.7. All installed versions are typically stored at the following file path:
 
@@ -54,7 +54,7 @@ This table presents Sitecore Azure module compatibility with different versions 
 
 > **Legend:** “-” – not supported; “✓” – supported.
 
-##Notes
+## Notes
 
 + [1] Sitecore Azure 8.0 rev. 150522 Hotfix 68545-1 (8.0 Update-1) must be installed. See [here](https://dev.sitecore.net/Downloads/Sitecore_Azure/80/Sitecore_Azure_80_Update1) for more details.
 + [2] Sitecore Azure 7.5 rev. 161110 (7.5 Update-1) must be installed. See [here](https://sdn.sitecore.net/products/sitecore%20azure/sitecore%20azure%207,-d-,5/download%20sitecore%20azure.aspx) for more details.
