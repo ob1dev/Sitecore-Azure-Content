@@ -1,4 +1,4 @@
-#How to configure SSL in Sitecore Azure
+# How to configure SSL in Sitecore Azure
 
 Sitecore CMS supports configuration of the Secure Socket Layer (SSL) encryption to secure the data sent across the internet.
 
@@ -7,7 +7,7 @@ The current article provides a list of techniques that can be used to manually c
 > **Note:** For the basic information about configuring SSL for an application in Azure, see Microsoft Azure website: 
 https://azure.microsoft.com/en-us/documentation/articles/cloud-services-configure-ssl-certificate/
 
-#Solution
+# Solution
 
 The recommended approach to configure SSL in Sitecore Azure is as follows:
 
