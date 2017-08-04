@@ -1,4 +1,4 @@
-#How to share a database between Farms in Sitecore Azure
+# How to share a database between Farms in Sitecore Azure
 
 The Sitecore Azure module automatically creates the [Microsoft Azure SQL Databases Service](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx) and deploys the default Sitecore Core, Master and Web databases during deployment.
 
@@ -6,7 +6,7 @@ However, the module also allows using an existing database from another Farm. Fo
 
 This article provides a list of techniques that can be used to manually share a database between Farms using the Sitecore Azure module.
 
-##Solution
+## Solution
 
 The recommended approach to share a database between Farms in Sitecore Azure is as follows:   
 
