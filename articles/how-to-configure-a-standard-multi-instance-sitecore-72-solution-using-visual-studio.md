@@ -1,4 +1,4 @@
-#How to configure a standard multi-instance Sitecore 7.2 solution using Visual Studio
+# How to configure a standard multi-instance Sitecore 7.2 solution using Visual Studio
 
 Sitecore supports distributed solutions that include multiple Sitecore instances in both the Content Management (CM) and Content Delivery (CD) environments.
 
@@ -20,7 +20,7 @@ This article provides a list of techniques that can be used to configure Microso
 
 > **Note:** To download the latest version of the Microsoft Azure SDK and Tool for Visual Studio, follow this link: http://azure.microsoft.com/en-us/downloads/
 
-##Solution
+## Solution
 
 The recommended approach to configuring multi-instance CM and CD deployments using Visual Studio is as follows:
 
