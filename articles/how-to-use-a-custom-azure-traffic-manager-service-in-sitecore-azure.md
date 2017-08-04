@@ -1,5 +1,4 @@
-
-#How to use a custom Azure Traffic Manager Service in Sitecore Azure
+# How to use a custom Azure Traffic Manager Service in Sitecore Azure
 
 The Sitecore Azure module automatically creates all Microsoft Azure services it uses during deployment, as well as generates names for them. The pattern for generating names depends on the project name and environment type from the Sitecore Azure Environment file, as well as the deployment location, deployment type, etc.
 
@@ -7,7 +6,7 @@ One of the services used during deployment is the [Microsoft Azure Traffic Manag
 
 This article provides a list of techniques that can be used to manually create the Microsoft Azure Traffic Manager and deploy a Sitecore solution using this Traffic Manager Service when using the Sitecore Azure module.
 
-##Solution
+## Solution
 
 The recommended approach to use a custom Azure Storage Service in Sitecore Azure is as follows:
 
