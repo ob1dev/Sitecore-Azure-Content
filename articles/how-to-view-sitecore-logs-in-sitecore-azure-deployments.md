@@ -1,4 +1,4 @@
-#How to view Sitecore logs in Sitecore Azure deployments
+# How to view Sitecore logs in Sitecore Azure deployments
 
 The Sitecore Azure module automatically creates the [Microsoft Azure Storage Service](https://msdn.microsoft.com/en-us/library/azure/gg433040.aspx) during deployment and then uses this service to store Sitecore log entries and other diagnostic data. The data is organized into tables.
 
@@ -14,7 +14,7 @@ Here is the list of all the tables used for Sitecore Azure Deployment diagnostic
 
 This article lists various ways that you can use to explore the WADLogsTable table in the Microsoft Azure Storage, which contains Sitecore logs.
 
-##Solution
+## Solution
 
 Use one of the following approaches to view Sitecore logs in the WADLogsTable table:
 - Use the [Sitecore Log Analyzer](https://marketplace.sitecore.net/Modules/Sitecore_Log_Analyzer.aspx) tool, which parses and analyzes Sitecore logs from the Azure Table Storage source.
