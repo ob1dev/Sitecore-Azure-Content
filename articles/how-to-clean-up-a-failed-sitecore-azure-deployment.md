@@ -1,4 +1,4 @@
-#How to clean up a failed Sitecore Azure deployment
+# How to clean up a failed Sitecore Azure deployment
 
 The Sitecore Azure module automates the deployment process of a Sitecore solution to [Microsoft Azure](http://azure.microsoft.com/) cloud platform using the PaaS model. It keeps all routine work and many steps involved into the process behind the scenes.
 
@@ -6,7 +6,7 @@ However, a deployment may sometimes fail due to various reasons, such as network
 
 This article provides a list of techniques that can be used to clean up a failed Sitecore Azure deployment when not all of the deployment steps have been successfully completed.
 
-##Solution
+## Solution
 
 The recommended approach to clean up a failed deployment is as follows:
 
