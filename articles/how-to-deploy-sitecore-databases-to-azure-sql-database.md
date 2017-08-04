@@ -1,4 +1,4 @@
-#How to deploy Sitecore databases to Azure SQL Database
+# How to deploy Sitecore databases to Azure SQL Database
 
 This article provides a list of techniques that can be used to deploy Sitecore databases to Microsoft Azure using Microsoft SQL Server Management Studio.
 
@@ -11,7 +11,7 @@ This article provides a list of techniques that can be used to deploy Sitecore d
 
 > **Note:** See also [How to deploy Sitecore databases to Azure SQL Database using PowerShell](https://github.com/olegburov/Sitecore-Azure-Content/blob/master/articles/how-to-deploy-sitecore-databases-to-azure-sql-database-using-powershell.md).
 
-##Instructions
+## Instructions
 
 The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQL Database](https://msdn.microsoft.com/en-us/library/azure/ee336279.aspx) service is as follows:
 
@@ -120,7 +120,7 @@ The recommended approach to deploy Sitecore databases to the [Microsoft Azure SQ
 
 27. Repeat steps 24-26 for each Sitecore database you want to import.
 
-##Download Options
+## Download Options
 
 Exported Sitecore databases as `*.bacpac` files:
 
