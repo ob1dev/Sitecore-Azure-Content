@@ -1,4 +1,4 @@
-#How to deploy Sitecore 7.2 solution to Microsoft Azure Cloud Service using Visual Studio
+# How to deploy Sitecore 7.2 solution to Microsoft Azure Cloud Service using Visual Studio
 
 After developing a Sitecore solution in Visual Studio, it is possible to manually publish this solution to the Microsoft Azure Cloud Platform.
 
@@ -20,7 +20,7 @@ This article provides a list of techniques that can be used to deploy a Sitecore
 
 > **Note:** To download the latest version of the Microsoft Azure SDK and Tool for Visual Studio, follow this link: http://azure.microsoft.com/en-us/downloads/
 
-##Instructions
+## Instructions
 
 The recommended approach to deploy a Sitecore solution to Microsoft Azure using Visual Studio is as follows:
 
