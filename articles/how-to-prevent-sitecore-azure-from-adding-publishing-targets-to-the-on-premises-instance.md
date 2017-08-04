@@ -1,4 +1,4 @@
-#How to prevent Sitecore Azure from adding Publishing Targets to the on-premises instance
+# How to prevent Sitecore Azure from adding Publishing Targets to the on-premises instance
 
 The Sitecore Azure module automatically adds a remote Sitecore Web database to the on-premises Sitecore instance (Deployment Center) during either the Editing or Delivery Farm deployment.
 
@@ -14,7 +14,7 @@ The module performs the following steps:
 
 This article provides a list of techniques that can be used to prevent adding a Publishing Target to on-premises when using the Sitecore Azure module.
 
-##Solution
+## Solution
 
 The recommended approach to prevent adding a Publishing Target in Sitecore Azure is as follows:
 
